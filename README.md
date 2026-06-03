@@ -9,12 +9,11 @@
 [![Skins](https://img.shields.io/badge/skins-67-brightgreen)](./skins/)
 [![Dark](https://img.shields.io/badge/dark-49-blue)](./skins/)
 [![Light](https://img.shields.io/badge/light-18-yellow)](./skins/)
+| [![Website](https://img.shields.io/badge/preview-hermes--skins.top-blue)](https://www.hermes-skins.top)
 [![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
-
 ## 🖼 预览 / Preview
 
-
-在浏览器中打开 (https://www.hermes-skins.top/) 即可看到所有 67 套皮肤的完整预览页面：
+在浏览器中打开 [www.hermes-skins.top](https://www.hermes-skins.top) 即可看到所有 67 套皮肤的完整预览页面：
 - 🎯 **真实终端模拟** — 每张卡片都是完整渲染的 Hermes CLI 界面
 - 🎨 **实时配色对比** — 看到 prompt、边框、状态栏、响应区域的实际颜色
 - 📋 **一键复制** — 点击任意皮肤的「复制 YAML 配置」按钮，粘贴即用
@@ -22,7 +21,7 @@
 <img width="761" height="860" alt="局部截取_20260603_100836" src="https://github.com/user-attachments/assets/3c9087c3-df18-44f6-81a2-486fd770f915" />
 
 
-Open(https://www.hermes-skins.top/) in your browser to browse all 67 skins in a live preview:
+Open [www.hermes-skins.top](https://www.hermes-skins.top) in your browser to browse all 67 skins in a live preview:
 - 🎯 **Real terminal mockups** — every card renders a complete Hermes CLI screen
 - 🎨 **See the actual colors** — prompt, borders, status bar, response area
 - 📋 **One-click copy** — click any skin's "Copy YAML" button
