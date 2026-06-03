@@ -1,6 +1,6 @@
 # 🎨 Hermes Skin Gallery
 
-> <img width="1100"  alt="90388c472f2444d78696eac9721ca097" src="https://github.com/user-attachments/assets/f191249a-b503-47cd-a5b3-6deaefccccb1" />
+> <img width="800"  alt="90388c472f2444d78696eac9721ca097" src="https://github.com/user-attachments/assets/f191249a-b503-47cd-a5b3-6deaefccccb1" />
 
 
 >
