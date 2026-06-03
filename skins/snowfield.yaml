@@ -1,0 +1,35 @@
+name: snowfield
+description: "雪原 · 纯白 — 北极雪原的极致白，刺眼白光 + 淡蓝阴影"
+mode: light
+colors:
+  banner_border: "#d0d8e8"
+  banner_title: "#4488cc"
+  banner_accent: "#80b8ee"
+  banner_dim: "#e0e8f4"
+  banner_text: "#2a3038"
+  ui_accent: "#4488cc"
+  ui_label: "#2a3038"
+  ui_ok: "#559966"
+  ui_error: "#cc4455"
+  ui_warn: "#cc8833"
+  prompt: "#4488cc"
+  input_rule: "#d0d8e8"
+  response_border: "#d0d8e8"
+  status_bar_bg: "#f0f4fa"
+  session_label: "#4488cc"
+  session_border: "#d0d8e8"
+spinner:
+  waiting_faces:
+    - "(❄)"
+    - "(⛄)"
+    - "(🧊)"
+  thinking_verbs:
+    - "shivering"
+    - "freezing"
+    - "glinting"
+branding:
+  agent_name: "❄ Snowfield"
+  welcome: "零下 40 度"
+  prompt_symbol: "❯"
+  response_label: "snowfield"
+tool_prefix: "┊"

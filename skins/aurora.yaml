@@ -1,0 +1,35 @@
+name: aurora
+description: "极光 · 绿紫 — 北极光灵感，深空底色中流淌着绿紫色光带"
+mode: dark
+colors:
+  banner_border: "#2a1a4a"
+  banner_title: "#00ff88"
+  banner_accent: "#bb66ff"
+  banner_dim: "#12182a"
+  banner_text: "#c0d0e0"
+  ui_accent: "#44ffaa"
+  ui_label: "#c0d0e0"
+  ui_ok: "#66ff88"
+  ui_error: "#ff4466"
+  ui_warn: "#ffdd66"
+  prompt: "#66ffcc"
+  input_rule: "#4a2a7a"
+  response_border: "#3a2a6a"
+  status_bar_bg: "#080a16"
+  session_label: "#88ffbb"
+  session_border: "#4a2a7a"
+spinner:
+  waiting_faces:
+    - "(🌌)"
+    - "(✨)"
+    - "(🌠)"
+  thinking_verbs:
+    - "dancing"
+    - "shimmering"
+    - "flowing"
+branding:
+  agent_name: "🌌 Aurora"
+  welcome: "极光绽放"
+  prompt_symbol: "✦"
+  response_label: "aurora"
+tool_prefix: "┊"

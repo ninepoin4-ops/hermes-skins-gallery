@@ -1,0 +1,35 @@
+name: tokyo-night
+description: "东京夜蓝粉 — 都市夜空的深邃蓝 + 霓虹粉"
+mode: dark
+colors:
+  banner_border: "#565f89"
+  banner_title: "#7aa2f7"
+  banner_accent: "#bb9af7"
+  banner_dim: "#24283b"
+  banner_text: "#a9b1d6"
+  ui_accent: "#7dcfff"
+  ui_label: "#a9b1d6"
+  ui_ok: "#9ece6a"
+  ui_error: "#f7768e"
+  ui_warn: "#e0af68"
+  prompt: "#7aa2f7"
+  input_rule: "#565f89"
+  response_border: "#565f89"
+  status_bar_bg: "#13141f"
+  session_label: "#7aa2f7"
+  session_border: "#565f89"
+spinner:
+  waiting_faces:
+    - "(🌃)"
+    - "(🗼)"
+    - "(🎑)"
+  thinking_verbs:
+    - "夜巡"
+    - "检索"
+    - "解析"
+branding:
+  agent_name: "🌃 Tokyo Night"
+  welcome: "東京の夜へようこそ"
+  prompt_symbol: "❯"
+  response_label: "tokyo"
+tool_prefix: "┊"

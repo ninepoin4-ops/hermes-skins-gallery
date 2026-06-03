@@ -1,0 +1,35 @@
+name: amber-glass
+description: "琥珀玻璃 · 通透 — 琥珀色玻璃瓶质感，温暖半透明 + 蜂蜜光泽"
+mode: light
+colors:
+  banner_border: "#c8a060"
+  banner_title: "#a87030"
+  banner_accent: "#d4b070"
+  banner_dim: "#e8dcc8"
+  banner_text: "#3a2a18"
+  ui_accent: "#b88040"
+  ui_label: "#3a2a18"
+  ui_ok: "#6a8a4a"
+  ui_error: "#a04030"
+  ui_warn: "#c09030"
+  prompt: "#a87030"
+  input_rule: "#c8a060"
+  response_border: "#c8a060"
+  status_bar_bg: "#f4ece0"
+  session_label: "#a87030"
+  session_border: "#c8a060"
+spinner:
+  waiting_faces:
+    - "(🍯)"
+    - "(🫙)"
+    - "(✨)"
+  thinking_verbs:
+    - "pouring"
+    - "glowing"
+    - "shimmering"
+branding:
+  agent_name: "🍯 Amber Glass"
+  welcome: "透过琥珀色的光"
+  prompt_symbol: "❯"
+  response_label: "amber"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: matcha
+description: "抹茶 · 和敬 — 日式抹茶色调，深绿基底 + 暖黄点缀，茶道的宁静"
+mode: dark
+colors:
+  banner_border: "#2a4a2a"
+  banner_title: "#8bc34a"
+  banner_accent: "#cddc39"
+  banner_dim: "#1a2818"
+  banner_text: "#b0c0a0"
+  ui_accent: "#9ccc65"
+  ui_label: "#b0c0a0"
+  ui_ok: "#66bb6a"
+  ui_error: "#bf4a2a"
+  ui_warn: "#d4a030"
+  prompt: "#aed581"
+  input_rule: "#2a4a2a"
+  response_border: "#2a4a2a"
+  status_bar_bg: "#0a100c"
+  session_label: "#9ccc65"
+  session_border: "#2a4a2a"
+spinner:
+  waiting_faces:
+    - "(🍵)"
+    - "(🎋)"
+    - "(🌿)"
+  thinking_verbs:
+    - "点茶"
+    - "静心"
+    - "禅定"
+branding:
+  agent_name: "🍵 Matcha"
+  welcome: "一期一会"
+  prompt_symbol: "❯"
+  response_label: "matcha"
+tool_prefix: "┊"

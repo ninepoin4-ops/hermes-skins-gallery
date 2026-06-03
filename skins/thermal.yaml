@@ -1,0 +1,35 @@
+name: thermal
+description: "热成像 · 蓝焰 — 模拟热成像仪，蓝→紫→红→黄→白渐变，温度越高越亮"
+mode: dark
+colors:
+  banner_border: "#0044ff"
+  banner_title: "#ff4400"
+  banner_accent: "#ffaa00"
+  banner_dim: "#002266"
+  banner_text: "#88ccff"
+  ui_accent: "#ff6600"
+  ui_label: "#88ccff"
+  ui_ok: "#00cc66"
+  ui_error: "#ff0000"
+  ui_warn: "#ffaa00"
+  prompt: "#ff4400"
+  input_rule: "#0044ff"
+  response_border: "#6600ff"
+  status_bar_bg: "#0a0a14"
+  session_label: "#ff6600"
+  session_border: "#4400cc"
+spinner:
+  waiting_faces:
+    - "(🌡)"
+    - "(🔥)"
+    - "(🥵)"
+  thinking_verbs:
+    - "scanning"
+    - "measuring"
+    - "calibrating"
+branding:
+  agent_name: "🌡 Thermal"
+  welcome: "热成像校准完成"
+  prompt_symbol: "❯"
+  response_label: "thermal"
+tool_prefix: "┊"

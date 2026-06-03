@@ -1,0 +1,35 @@
+name: forest
+description: "森林绿 — 幽暗森林色调，墨绿与苔藓的自然感"
+mode: dark
+colors:
+  banner_border: "#1a4a1a"
+  banner_title: "#4caf50"
+  banner_accent: "#8bc34a"
+  banner_dim: "#1a2a1a"
+  banner_text: "#b8c8a8"
+  ui_accent: "#66bb6a"
+  ui_label: "#b8c8a8"
+  ui_ok: "#4caf50"
+  ui_error: "#c62828"
+  ui_warn: "#ffee58"
+  prompt: "#8bc34a"
+  input_rule: "#1a4a1a"
+  response_border: "#1a4a1a"
+  status_bar_bg: "#0a140a"
+  session_label: "#66bb6a"
+  session_border: "#1a4a1a"
+spinner:
+  waiting_faces:
+    - "(🌲)"
+    - "(🍃)"
+    - "(🌿)"
+  thinking_verbs:
+    - "生长"
+    - "呼吸"
+    - "滋养"
+branding:
+  agent_name: "🌲 Forest"
+  welcome: "步入林间"
+  prompt_symbol: "❯"
+  response_label: "forest"
+tool_prefix: "┊"

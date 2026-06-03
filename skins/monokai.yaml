@@ -1,0 +1,35 @@
+name: monokai
+description: "霓虹高饱和 — 经典 Monokai，鲜艳明亮的高对比度"
+mode: dark
+colors:
+  banner_border: "#49483e"
+  banner_title: "#f92672"
+  banner_accent: "#a6e22e"
+  banner_dim: "#3b3a32"
+  banner_text: "#f8f8f2"
+  ui_accent: "#fd971f"
+  ui_label: "#f8f8f2"
+  ui_ok: "#a6e22e"
+  ui_error: "#f92672"
+  ui_warn: "#e6db74"
+  prompt: "#fd971f"
+  input_rule: "#49483e"
+  response_border: "#49483e"
+  status_bar_bg: "#1e1f1c"
+  session_label: "#f92672"
+  session_border: "#49483e"
+spinner:
+  waiting_faces:
+    - "(●)"
+    - "(◆)"
+    - "(▲)"
+  thinking_verbs:
+    - "computing"
+    - "processing"
+    - "rendering"
+branding:
+  agent_name: "◆ Monokai"
+  welcome: "Vibrant as ever"
+  prompt_symbol: "❯"
+  response_label: "monokai"
+tool_prefix: "┊"

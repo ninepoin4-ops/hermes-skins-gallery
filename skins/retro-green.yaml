@@ -1,0 +1,35 @@
+name: retro-green
+description: "绿 CRT · IBM 3270 — IBM 绿屏终端风格，P1 荧光粉单色显示"
+mode: dark
+colors:
+  banner_border: "#1a881a"
+  banner_title: "#33cc33"
+  banner_accent: "#55ee55"
+  banner_dim: "#003300"
+  banner_text: "#33cc33"
+  ui_accent: "#33cc33"
+  ui_label: "#33cc33"
+  ui_ok: "#44dd44"
+  ui_error: "#116611"
+  ui_warn: "#88ff44"
+  prompt: "#33cc33"
+  input_rule: "#1a881a"
+  response_border: "#1a881a"
+  status_bar_bg: "#000800"
+  session_label: "#33cc33"
+  session_border: "#1a881a"
+spinner:
+  waiting_faces:
+    - "(·)"
+    - "(:)"
+    - "(☰)"
+  thinking_verbs:
+    - "initializing"
+    - "polling"
+    - "buffering"
+branding:
+  agent_name: "☰ Retro Green"
+  welcome: "IBM 3270 联机"
+  prompt_symbol: "▸"
+  response_label: "green"
+tool_prefix: "┊"

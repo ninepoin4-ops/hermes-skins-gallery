@@ -1,0 +1,35 @@
+name: bamboo
+description: "竹青 · 禅意 — 竹青色与暖木搭配，东方禅意的宁静"
+mode: light
+colors:
+  banner_border: "#a5d6a7"
+  banner_title: "#2e7d32"
+  banner_accent: "#66bb6a"
+  banner_dim: "#c8e6c7"
+  banner_text: "#2a3a1a"
+  ui_accent: "#388e3c"
+  ui_label: "#2a3a1a"
+  ui_ok: "#1b5e20"
+  ui_error: "#c62828"
+  ui_warn: "#f57f17"
+  prompt: "#2e7d32"
+  input_rule: "#a5d6a7"
+  response_border: "#a5d6a7"
+  status_bar_bg: "#e8f0e4"
+  session_label: "#2e7d32"
+  session_border: "#a5d6a7"
+spinner:
+  waiting_faces:
+    - "(🎋)"
+    - "(🍃)"
+    - "(🌿)"
+  thinking_verbs:
+    - "静坐"
+    - "冥想"
+    - "品茗"
+branding:
+  agent_name: "🎋 Bamboo"
+  welcome: "虚怀若谷"
+  prompt_symbol: "❯"
+  response_label: "bamboo"
+tool_prefix: "┊"

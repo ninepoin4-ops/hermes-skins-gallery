@@ -1,0 +1,35 @@
+name: plasma
+description: "等离子 · 电光 — 高能等离子体，紫色电光交织，能量感十足"
+mode: dark
+colors:
+  banner_border: "#6a00ff"
+  banner_title: "#aa44ff"
+  banner_accent: "#ff44dd"
+  banner_dim: "#2a004a"
+  banner_text: "#d0a0ff"
+  ui_accent: "#cc66ff"
+  ui_label: "#d0a0ff"
+  ui_ok: "#44ffaa"
+  ui_error: "#ff2266"
+  ui_warn: "#ffcc00"
+  prompt: "#ff66ee"
+  input_rule: "#6a00ff"
+  response_border: "#8800ff"
+  status_bar_bg: "#0c0018"
+  session_label: "#cc66ff"
+  session_border: "#8800ff"
+spinner:
+  waiting_faces:
+    - "(⚡)"
+    - "(💥)"
+    - "(🔥)"
+  thinking_verbs:
+    - "ionizing"
+    - "conducting"
+    - "discharging"
+branding:
+  agent_name: "⚡ Plasma"
+  welcome: "离子流已激活"
+  prompt_symbol: "⚡"
+  response_label: "plasma"
+tool_prefix: "┊"

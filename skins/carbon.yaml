@@ -1,0 +1,35 @@
+name: carbon
+description: "碳灰蓝 — 工业级碳灰，冷静克制不失质感"
+mode: dark
+colors:
+  banner_border: "#2a2e38"
+  banner_title: "#5c8aff"
+  banner_accent: "#8ab4ff"
+  banner_dim: "#1e2228"
+  banner_text: "#c0c4cc"
+  ui_accent: "#5c8aff"
+  ui_label: "#c0c4cc"
+  ui_ok: "#66bb6a"
+  ui_error: "#f44336"
+  ui_warn: "#ffa726"
+  prompt: "#8ab4ff"
+  input_rule: "#2a2e38"
+  response_border: "#2a2e38"
+  status_bar_bg: "#0c0e12"
+  session_label: "#5c8aff"
+  session_border: "#2a2e38"
+spinner:
+  waiting_faces:
+    - "(○)"
+    - "(◔)"
+    - "(◕)"
+  thinking_verbs:
+    - "processing"
+    - "synthesizing"
+    - "compiling"
+branding:
+  agent_name: "◆ Carbon"
+  welcome: "Carbon shell initialized"
+  prompt_symbol: "❯"
+  response_label: "carbon"
+tool_prefix: "┊"

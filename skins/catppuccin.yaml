@@ -1,0 +1,35 @@
+name: catppuccin
+description: "暖咖紫 · 细腻 — 温柔的低饱和暖紫，护眼又高级"
+mode: dark
+colors:
+  banner_border: "#585b70"
+  banner_title: "#cba6f7"
+  banner_accent: "#89b4fa"
+  banner_dim: "#313244"
+  banner_text: "#cdd6f4"
+  ui_accent: "#f5c2e7"
+  ui_label: "#cdd6f4"
+  ui_ok: "#a6e3a1"
+  ui_error: "#f38ba8"
+  ui_warn: "#f9e2af"
+  prompt: "#89b4fa"
+  input_rule: "#585b70"
+  response_border: "#585b70"
+  status_bar_bg: "#181825"
+  session_label: "#cba6f7"
+  session_border: "#585b70"
+spinner:
+  waiting_faces:
+    - "(🐱)"
+    - "(😺)"
+    - "(😸)"
+  thinking_verbs:
+    - "purring"
+    - "calculating"
+    - "thinking"
+branding:
+  agent_name: "🐱 Catppuccin"
+  welcome: "meow~"
+  prompt_symbol: "❯"
+  response_label: "cat"
+tool_prefix: "┊"

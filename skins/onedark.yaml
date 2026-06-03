@@ -1,0 +1,35 @@
+name: onedark
+description: "Atom 经典 — Atom 编辑器经典配色，干净舒适"
+mode: dark
+colors:
+  banner_border: "#4b5263"
+  banner_title: "#61afef"
+  banner_accent: "#98c379"
+  banner_dim: "#3e4451"
+  banner_text: "#abb2bf"
+  ui_accent: "#61afef"
+  ui_label: "#abb2bf"
+  ui_ok: "#98c379"
+  ui_error: "#e06c75"
+  ui_warn: "#e5c07b"
+  prompt: "#61afef"
+  input_rule: "#4b5263"
+  response_border: "#4b5263"
+  status_bar_bg: "#21252b"
+  session_label: "#61afef"
+  session_border: "#4b5263"
+spinner:
+  waiting_faces:
+    - "(•)"
+    - "(••)"
+    - "(•••)"
+  thinking_verbs:
+    - "indexing"
+    - "parsing"
+    - "building"
+branding:
+  agent_name: "◆ One Dark"
+  welcome: "Atom 精神延续"
+  prompt_symbol: "❯"
+  response_label: "onedark"
+tool_prefix: "┊"

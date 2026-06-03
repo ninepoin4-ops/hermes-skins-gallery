@@ -1,0 +1,35 @@
+name: solarized
+description: "柔光 · 护眼 — 经典 Solarized 明色调，暖黄底绿蓝搭配"
+mode: light
+colors:
+  banner_border: "#93a1a1"
+  banner_title: "#268bd2"
+  banner_accent: "#2aa198"
+  banner_dim: "#eee8d5"
+  banner_text: "#586e75"
+  ui_accent: "#268bd2"
+  ui_label: "#586e75"
+  ui_ok: "#859900"
+  ui_error: "#dc322f"
+  ui_warn: "#b58900"
+  prompt: "#2aa198"
+  input_rule: "#93a1a1"
+  response_border: "#93a1a1"
+  status_bar_bg: "#f0e8d5"
+  session_label: "#268bd2"
+  session_border: "#93a1a1"
+spinner:
+  waiting_faces:
+    - "(☀)"
+    - "(🌤)"
+    - "(⛅)"
+  thinking_verbs:
+    - "illuminating"
+    - "shining"
+    - "warming"
+branding:
+  agent_name: "☀ Solarized"
+  welcome: "Gentle light"
+  prompt_symbol: "❯"
+  response_label: "solar"
+tool_prefix: "┊"

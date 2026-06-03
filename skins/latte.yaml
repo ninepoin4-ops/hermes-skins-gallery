@@ -1,0 +1,35 @@
+name: latte
+description: "暖拿铁 · 猫茶 — Catppuccin Latte 暖调，像一杯拿铁"
+mode: light
+colors:
+  banner_border: "#9ca0b0"
+  banner_title: "#8839ef"
+  banner_accent: "#1e66f5"
+  banner_dim: "#ccd0da"
+  banner_text: "#4c4f69"
+  ui_accent: "#ea76cb"
+  ui_label: "#4c4f69"
+  ui_ok: "#40a02b"
+  ui_error: "#d20f39"
+  ui_warn: "#df8e1d"
+  prompt: "#1e66f5"
+  input_rule: "#9ca0b0"
+  response_border: "#9ca0b0"
+  status_bar_bg: "#e6e9ef"
+  session_label: "#8839ef"
+  session_border: "#9ca0b0"
+spinner:
+  waiting_faces:
+    - "(☕)"
+    - "(🐱)"
+    - "(😌)"
+  thinking_verbs:
+    - "brewing"
+    - "steeping"
+    - "pouring"
+branding:
+  agent_name: "☕ Latte"
+  welcome: "Coffee time~"
+  prompt_symbol: "❯"
+  response_label: "latte"
+tool_prefix: "┊"

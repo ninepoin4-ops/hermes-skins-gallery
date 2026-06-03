@@ -1,0 +1,35 @@
+name: arctic
+description: "极夜冰蓝 — 极地永夜中的冰蓝色光芒，冷冽通透"
+mode: dark
+colors:
+  banner_border: "#0d3b5e"
+  banner_title: "#4fc3f7"
+  banner_accent: "#81d4fa"
+  banner_dim: "#0d1f2e"
+  banner_text: "#b0c8e0"
+  ui_accent: "#29b6f6"
+  ui_label: "#b0c8e0"
+  ui_ok: "#66bb6a"
+  ui_error: "#e53935"
+  ui_warn: "#ffb74d"
+  prompt: "#81d4fa"
+  input_rule: "#0d3b5e"
+  response_border: "#0d3b5e"
+  status_bar_bg: "#08121a"
+  session_label: "#4fc3f7"
+  session_border: "#0d3b5e"
+spinner:
+  waiting_faces:
+    - "(❄)"
+    - "(🌨)"
+    - "(🧊)"
+  thinking_verbs:
+    - "freezing"
+    - "crystallizing"
+    - "snowing"
+branding:
+  agent_name: "❄ Arctic"
+  welcome: "极夜降临"
+  prompt_symbol: "❯"
+  response_label: "arctic"
+tool_prefix: "┊"

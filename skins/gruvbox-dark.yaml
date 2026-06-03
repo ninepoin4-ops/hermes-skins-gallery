@@ -1,0 +1,35 @@
+name: gruvbox-dark
+description: "复古暗黄 — 暖调复古风，橙绿搭配充满怀旧感"
+mode: dark
+colors:
+  banner_border: "#665c54"
+  banner_title: "#fabd2f"
+  banner_accent: "#8ec07c"
+  banner_dim: "#3c3836"
+  banner_text: "#ebdbb2"
+  ui_accent: "#d3869b"
+  ui_label: "#ebdbb2"
+  ui_ok: "#b8bb26"
+  ui_error: "#fb4934"
+  ui_warn: "#fabd2f"
+  prompt: "#fabd2f"
+  input_rule: "#665c54"
+  response_border: "#665c54"
+  status_bar_bg: "#1d2021"
+  session_label: "#fabd2f"
+  session_border: "#665c54"
+spinner:
+  waiting_faces:
+    - "(🎸)"
+    - "(🎵)"
+    - "(🎶)"
+  thinking_verbs:
+    - "grooving"
+    - "riffer"
+    - "jammin"
+branding:
+  agent_name: "🎸 Gruvbox"
+  welcome: "Let\"
+  prompt_symbol: "❯"
+  response_label: "gruv"
+tool_prefix: "┊"

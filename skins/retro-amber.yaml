@@ -1,0 +1,35 @@
+name: retro-amber
+description: "琥珀 CRT · 单色 — 模拟老式单色 CRT 终端机，整个界面只有一种琥珀色发光"
+mode: dark
+colors:
+  banner_border: "#cc8800"
+  banner_title: "#ffb000"
+  banner_accent: "#ffcc44"
+  banner_dim: "#553300"
+  banner_text: "#ffb000"
+  ui_accent: "#ffb000"
+  ui_label: "#ffb000"
+  ui_ok: "#ffcc44"
+  ui_error: "#cc6600"
+  ui_warn: "#ffdd66"
+  prompt: "#ffb000"
+  input_rule: "#cc8800"
+  response_border: "#cc8800"
+  status_bar_bg: "#0f0800"
+  session_label: "#ffb000"
+  session_border: "#cc8800"
+spinner:
+  waiting_faces:
+    - "(≋)"
+    - "(≈)"
+    - "(~)"
+  thinking_verbs:
+    - "scanning"
+    - "rasterizing"
+    - "phosphoring"
+branding:
+  agent_name: "≋ Retro Amber"
+  welcome: "VT100 模拟器启动"
+  prompt_symbol: "▸"
+  response_label: "retro"
+tool_prefix: "┊"

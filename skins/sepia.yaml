@@ -1,0 +1,35 @@
+name: sepia
+description: "暖褐 · 复古 — 怀旧棕色调，如旧纸书页般温润"
+mode: light
+colors:
+  banner_border: "#b58900"
+  banner_title: "#6b4226"
+  banner_accent: "#cb4b16"
+  banner_dim: "#cdba96"
+  banner_text: "#3c2f1f"
+  ui_accent: "#b58900"
+  ui_label: "#3c2f1f"
+  ui_ok: "#2d7d46"
+  ui_error: "#b33b24"
+  ui_warn: "#b8860b"
+  prompt: "#b58900"
+  input_rule: "#b58900"
+  response_border: "#b58900"
+  status_bar_bg: "#f5eace"
+  session_label: "#b58900"
+  session_border: "#b58900"
+spinner:
+  waiting_faces:
+    - "(📜)"
+    - "(🖋)"
+    - "(📖)"
+  thinking_verbs:
+    - "翻页"
+    - "书写"
+    - "研磨"
+branding:
+  agent_name: "📜 Sepia"
+  welcome: "旧时光"
+  prompt_symbol: "❧"
+  response_label: "Sepia"
+tool_prefix: "┊"

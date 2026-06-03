@@ -1,0 +1,35 @@
+name: steampunk
+description: "蒸汽朋克 · 黄铜 — 维多利亚工业革命美学，黄铜齿轮 + 铜绿色调"
+mode: dark
+colors:
+  banner_border: "#8a5a2a"
+  banner_title: "#d4a44a"
+  banner_accent: "#e8c870"
+  banner_dim: "#3a2a16"
+  banner_text: "#c0a870"
+  ui_accent: "#d4a44a"
+  ui_label: "#c0a870"
+  ui_ok: "#6a9a5a"
+  ui_error: "#a04030"
+  ui_warn: "#d4aa30"
+  prompt: "#e8c870"
+  input_rule: "#8a5a2a"
+  response_border: "#8a5a2a"
+  status_bar_bg: "#140c06"
+  session_label: "#d4a44a"
+  session_border: "#8a5a2a"
+spinner:
+  waiting_faces:
+    - "(⚙)"
+    - "(🔧)"
+    - "(⛓)"
+  thinking_verbs:
+    - "steaming"
+    - "ticking"
+    - "cranking"
+branding:
+  agent_name: "⚙ Steampunk"
+  welcome: "齿轮开始转动"
+  prompt_symbol: "❯"
+  response_label: "steam"
+tool_prefix: "┊"

@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hermes Skin Gallery · 67 套终端皮肤</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    background: #0d0d12;
+    color: #ddd;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    border-bottom: 1px solid #1e1e2a;
+    background: linear-gradient(180deg, #0d0d12 0%, #111120 100%);
+  }
+  .header h1 {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 6px;
+  }
+  .header h1 span { color: #ffd700; }
+  .header .sub {
+    color: #666;
+    font-size: 14px;
+    margin-top: 6px;
+    letter-spacing: 2px;
+  }
+  .header .stats {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 13px;
+  }
+  .header .stats span {
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: #1a1a2a;
+  }
+
+  /* FILTER BAR */
+  .filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 20px;
+    flex-wrap: wrap;
+    background: #0d0d12;
+    border-bottom: 1px solid #1a1a28;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(13,13,18,0.92);
+  }
+  .filter-btn {
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid #2a2a3a;
+    background: transparent;
+    color: #888;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .filter-btn:hover { border-color: #555; color: #ddd; }
+  .filter-btn.active {
+    background: #ffd700;
+    color: #111;
+    border-color: #ffd700;
+    font-weight: 600;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 24px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* CARD */
+  .card {
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    cursor: default;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+  .card.hidden {
+    display: none;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
+  /* TERMINAL PREVIEW */
+  .terminal {
+    padding: 16px 18px 14px;
+    font-family: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 12.5px;
+    line-height: 1.65;
+    min-height: 170px;
+    position: relative;
+  }
+  .term-line { white-space: pre-wrap; word-break: break-all; }
+  .term-line .dim { opacity: 0.45; }
+  .spacer { height: 5px; }
+
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 18px;
+    font-size: 10.5px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* CARD FOOTER */
+  .card-footer {
+    padding: 14px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card-footer .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-footer .name {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .card-footer .tag {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .tag-dark { background: #2a2a3a; color: #aaa; }
+  .tag-light { background: #e8e0d8; color: #444; }
+  .card-footer .desc {
+    font-size: 12.5px;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+  }
+  .card-footer .actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .copy-btn {
+    padding: 6px 16px;
+    border-radius: 8px;
+    border: 1px solid currentColor;
+    background: transparent;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .copy-btn:hover { opacity: 1; background: rgba(255,255,255,0.05); }
+  .copy-btn.copied { opacity: 1; }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    padding: 10px 28px;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 999;
+    background: #2a2a3a;
+    color: #ddd;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0d0d12; }
+  ::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 4px; }
+
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; padding: 12px; }
+    .header h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>✦ <span>Hermes</span> Skin Gallery</h1>
+  <div class="sub">67 套终端皮肤 · 单击卡片复制 YAML 配置</div>
+  <div class="stats">
+    <span>🌙 深色 <b id="darkCount">0</b></span>
+    <span>☀ 浅色 <b id="lightCount">0</b></span>
+  </div>
+</div>
+
+<div class="filter-bar" id="filterBar">
+  <button class="filter-btn active" data-filter="all">全部 <span id="totalCount">67</span></button>
+  <button class="filter-btn" data-filter="dark">🌙 深色</button>
+  <button class="filter-btn" data-filter="light">☀ 浅色</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="toast" id="toast">✅ YAML 已复制到剪贴板</div>
+
+<script>
+// ====================================================================
+// SKIN DATA
+// ====================================================================
+const SKINS = [
+  // ============================ DARK (22) ============================
+  {
+    id: 'nebula', name: 'Nebula', mode: 'dark',
+    cat: '星云紫 · 霓虹青', desc: '深邃太空感，紫青渐变交错',
+    bg: '#0b0b1a', fg: '#c8c8e8',
+    colors: {
+      banner_border: '#7c4dff', banner_title: '#b388ff', banner_accent: '#00e5ff',
+      banner_dim: '#4a4a7a', banner_text: '#c8c8e8', ui_accent: '#b388ff',
+      ui_label: '#c8c8e8', ui_ok: '#69f0ae', ui_error: '#ff5252', ui_warn: '#ffd740',
+      prompt: '#00e5ff', input_rule: '#7c4dff', response_border: '#7c4dff',
+      status_bar_bg: '#13132e', session_label: '#b388ff', session_border: '#7c4dff'
+    },
+    spinner: { waiting: ['(◉)','(◎)','(◈)'], verbs: ['计算中','思考中','分析中'] },
+    branding: { agent: '✦ 星云', welcome: '星云引擎已启动', prompt: '✦', label: '星云' }
+  },
+  {
+    id: 'midnight', name: 'Midnight', mode: 'dark',
+    cat: '暗夜金 · 沉稳', desc: 'GitHub Dark 风格，暖金点缀深邃',
+    bg: '#0d1117', fg: '#c9d1d9',
+    colors: {
+      banner_border: '#b8860b', banner_title: '#ffd700', banner_accent: '#ffbf00',
+      banner_dim: '#3d444d', banner_text: '#c9d1d9', ui_accent: '#ffd700',
+      ui_label: '#c9d1d9', ui_ok: '#3fb950', ui_error: '#f85149', ui_warn: '#d29922',
+      prompt: '#ffd700', input_rule: '#b8860b', response_border: '#b8860b',
+      status_bar_bg: '#161b22', session_label: '#ffd700', session_border: '#b8860b'
+    },
+    spinner: { waiting: ['(🌙)','(⭐)','(☄)'], verbs: ['计算中','思考中','分析中'] },
+    branding: { agent: '🌙 Midnight', welcome: '子夜已至', prompt: '❯', label: 'Midnight' }
+  },
+  {
+    id: 'matrix', name: 'Matrix', mode: 'dark',
+    cat: '黑客绿 · 极简', desc: '纯黑底 + 荧光绿，CRT 终端即视感',
+    bg: '#000000', fg: '#33ff55',
+    colors: {
+      banner_border: '#00cc33', banner_title: '#00ff41', banner_accent: '#7fff00',
+      banner_dim: '#1a3a1a', banner_text: '#33ff55', ui_accent: '#00ff41',
+      ui_label: '#33ff55', ui_ok: '#00ff41', ui_error: '#ff0033', ui_warn: '#ffff00',
+      prompt: '#00ff41', input_rule: '#00cc33', response_border: '#00cc33',
+      status_bar_bg: '#0a0a0a', session_label: '#00ff41', session_border: '#00cc33'
+    },
+    spinner: { waiting: ['(>)','(>>)','(>>>)'], verbs: ['processing','computing','parsing'] },
+    branding: { agent: '⎋ MATRIX', welcome: 'Wake up, Neo...', prompt: '$', label: 'root' }
+  },
+  {
+    id: 'dracula', name: 'Dracula', mode: 'dark',
+    cat: '紫粉 · 霓虹绿', desc: '经典 Dracula 配色，高饱和撞色',
+    bg: '#282a36', fg: '#f8f8f2',
+    colors: {
+      banner_border: '#6272a4', banner_title: '#ff79c6', banner_accent: '#50fa7b',
+      banner_dim: '#44475a', banner_text: '#f8f8f2', ui_accent: '#bd93f9',
+      ui_label: '#f8f8f2', ui_ok: '#50fa7b', ui_error: '#ff5555', ui_warn: '#f1fa8c',
+      prompt: '#ff79c6', input_rule: '#6272a4', response_border: '#6272a4',
+      status_bar_bg: '#21222c', session_label: '#bd93f9', session_border: '#6272a4'
+    },
+    spinner: { waiting: ['(🧛)','(🦇)','(🌙)'], verbs: ['sucking','hunting','casting'] },
+    branding: { agent: '🧛 Dracula', welcome: 'Welcome to the night', prompt: '❯', label: 'dracula' }
+  },
+  {
+    id: 'ember', name: 'Ember', mode: 'dark',
+    cat: '炭火橙红', desc: '炽热火焰色调，温暖而充满力量',
+    bg: '#1a0e0a', fg: '#e8d5c0',
+    colors: {
+      banner_border: '#bf360c', banner_title: '#ff6d00', banner_accent: '#ff9100',
+      banner_dim: '#3e1a0a', banner_text: '#e8d5c0', ui_accent: '#ff6d00',
+      ui_label: '#e8d5c0', ui_ok: '#69f0ae', ui_error: '#d50000', ui_warn: '#ffab00',
+      prompt: '#ff9100', input_rule: '#bf360c', response_border: '#bf360c',
+      status_bar_bg: '#24120a', session_label: '#ff6d00', session_border: '#bf360c'
+    },
+    spinner: { waiting: ['(🔥)','(🔥🔥)','(🔥🔥🔥)'], verbs: ['燃烧','炙烤','锻造'] },
+    branding: { agent: '🔥 Ember', welcome: '烈焰燃起', prompt: '❯', label: 'Ember' }
+  },
+  {
+    id: 'synthwave', name: 'Synthwave', mode: 'dark',
+    cat: '合成波粉紫', desc: '80 年代复古霓虹，粉紫 + 冰蓝',
+    bg: '#1a0a2e', fg: '#e0c0ff',
+    colors: {
+      banner_border: '#ff007f', banner_title: '#ff00aa', banner_accent: '#00ffff',
+      banner_dim: '#3a1a4e', banner_text: '#e0c0ff', ui_accent: '#ff00aa',
+      ui_label: '#e0c0ff', ui_ok: '#00ffbf', ui_error: '#ff0040', ui_warn: '#ffd000',
+      prompt: '#00ffff', input_rule: '#ff007f', response_border: '#ff007f',
+      status_bar_bg: '#22103a', session_label: '#ff00aa', session_border: '#ff007f'
+    },
+    spinner: { waiting: ['(🌈)','(🎸)','(💜)'], verbs: ['合成','采样','混音'] },
+    branding: { agent: '🎸 Synthwave', welcome: '穿越到 1984', prompt: '▶', label: 'synth' }
+  },
+  {
+    id: 'nord', name: 'Nord', mode: 'dark',
+    cat: '极地蓝灰', desc: '北欧极简风，冷静的蓝灰调',
+    bg: '#2e3440', fg: '#d8dee9',
+    colors: {
+      banner_border: '#4c566a', banner_title: '#88c0d0', banner_accent: '#a3be8c',
+      banner_dim: '#3b4252', banner_text: '#d8dee9', ui_accent: '#81a1c1',
+      ui_label: '#d8dee9', ui_ok: '#a3be8c', ui_error: '#bf616a', ui_warn: '#ebcb8b',
+      prompt: '#88c0d0', input_rule: '#4c566a', response_border: '#4c566a',
+      status_bar_bg: '#242933', session_label: '#88c0d0', session_border: '#4c566a'
+    },
+    spinner: { waiting: ['(❄)','(⛄)','(🌨)'], verbs: ['计算','思考','分析'] },
+    branding: { agent: '❄ Nord', welcome: '极地接入', prompt: '❯', label: 'nord' }
+  },
+  {
+    id: 'tokyo-night', name: 'Tokyo Night', mode: 'dark',
+    cat: '东京夜蓝粉', desc: '都市夜空的深邃蓝 + 霓虹粉',
+    bg: '#1a1b26', fg: '#a9b1d6',
+    colors: {
+      banner_border: '#565f89', banner_title: '#7aa2f7', banner_accent: '#bb9af7',
+      banner_dim: '#24283b', banner_text: '#a9b1d6', ui_accent: '#7dcfff',
+      ui_label: '#a9b1d6', ui_ok: '#9ece6a', ui_error: '#f7768e', ui_warn: '#e0af68',
+      prompt: '#7aa2f7', input_rule: '#565f89', response_border: '#565f89',
+      status_bar_bg: '#13141f', session_label: '#7aa2f7', session_border: '#565f89'
+    },
+    spinner: { waiting: ['(🌃)','(🗼)','(🎑)'], verbs: ['夜巡','检索','解析'] },
+    branding: { agent: '🌃 Tokyo Night', welcome: '東京の夜へようこそ', prompt: '❯', label: 'tokyo' }
+  },
+  {
+    id: 'catppuccin', name: 'Catppuccin', mode: 'dark',
+    cat: '暖咖紫 · 细腻', desc: '温柔的低饱和暖紫，护眼又高级',
+    bg: '#1e1e2e', fg: '#cdd6f4',
+    colors: {
+      banner_border: '#585b70', banner_title: '#cba6f7', banner_accent: '#89b4fa',
+      banner_dim: '#313244', banner_text: '#cdd6f4', ui_accent: '#f5c2e7',
+      ui_label: '#cdd6f4', ui_ok: '#a6e3a1', ui_error: '#f38ba8', ui_warn: '#f9e2af',
+      prompt: '#89b4fa', input_rule: '#585b70', response_border: '#585b70',
+      status_bar_bg: '#181825', session_label: '#cba6f7', session_border: '#585b70'
+    },
+    spinner: { waiting: ['(🐱)','(😺)','(😸)'], verbs: ['purring','calculating','thinking'] },
+    branding: { agent: '🐱 Catppuccin', welcome: 'meow~', prompt: '❯', label: 'cat' }
+  },
+  {
+    id: 'onedark', name: 'One Dark', mode: 'dark',
+    cat: 'Atom 经典', desc: 'Atom 编辑器经典配色，干净舒适',
+    bg: '#282c34', fg: '#abb2bf',
+    colors: {
+      banner_border: '#4b5263', banner_title: '#61afef', banner_accent: '#98c379',
+      banner_dim: '#3e4451', banner_text: '#abb2bf', ui_accent: '#61afef',
+      ui_label: '#abb2bf', ui_ok: '#98c379', ui_error: '#e06c75', ui_warn: '#e5c07b',
+      prompt: '#61afef', input_rule: '#4b5263', response_border: '#4b5263',
+      status_bar_bg: '#21252b', session_label: '#61afef', session_border: '#4b5263'
+    },
+    spinner: { waiting: ['(•)','(••)','(•••)'], verbs: ['indexing','parsing','building'] },
+    branding: { agent: '◆ One Dark', welcome: 'Atom 精神延续', prompt: '❯', label: 'onedark' }
+  },
+  {
+    id: 'gruvbox-dark', name: 'Gruvbox Dark', mode: 'dark',
+    cat: '复古暗黄', desc: '暖调复古风，橙绿搭配充满怀旧感',
+    bg: '#282828', fg: '#ebdbb2',
+    colors: {
+      banner_border: '#665c54', banner_title: '#fabd2f', banner_accent: '#8ec07c',
+      banner_dim: '#3c3836', banner_text: '#ebdbb2', ui_accent: '#d3869b',
+      ui_label: '#ebdbb2', ui_ok: '#b8bb26', ui_error: '#fb4934', ui_warn: '#fabd2f',
+      prompt: '#fabd2f', input_rule: '#665c54', response_border: '#665c54',
+      status_bar_bg: '#1d2021', session_label: '#fabd2f', session_border: '#665c54'
+    },
+    spinner: { waiting: ['(🎸)','(🎵)','(🎶)'], verbs: ['grooving','riffer','jammin'] },
+    branding: { agent: '🎸 Gruvbox', welcome: 'Let\'s groove', prompt: '❯', label: 'gruv' }
+  },
+  {
+    id: 'monokai', name: 'Monokai', mode: 'dark',
+    cat: '霓虹高饱和', desc: '经典 Monokai，鲜艳明亮的高对比度',
+    bg: '#272822', fg: '#f8f8f2',
+    colors: {
+      banner_border: '#49483e', banner_title: '#f92672', banner_accent: '#a6e22e',
+      banner_dim: '#3b3a32', banner_text: '#f8f8f2', ui_accent: '#fd971f',
+      ui_label: '#f8f8f2', ui_ok: '#a6e22e', ui_error: '#f92672', ui_warn: '#e6db74',
+      prompt: '#fd971f', input_rule: '#49483e', response_border: '#49483e',
+      status_bar_bg: '#1e1f1c', session_label: '#f92672', session_border: '#49483e'
+    },
+    spinner: { waiting: ['(●)','(◆)','(▲)'], verbs: ['computing','processing','rendering'] },
+    branding: { agent: '◆ Monokai', welcome: 'Vibrant as ever', prompt: '❯', label: 'monokai' }
+  },
+  {
+    id: 'oceanic', name: 'Oceanic', mode: 'dark',
+    cat: '深海蓝绿', desc: '深海色调，蓝绿渐变如海水般沉静',
+    bg: '#0a1a1f', fg: '#b8d4d0',
+    colors: {
+      banner_border: '#0e4d5e', banner_title: '#26c6da', banner_accent: '#4dd0e1',
+      banner_dim: '#0d2f38', banner_text: '#b8d4d0', ui_accent: '#26c6da',
+      ui_label: '#b8d4d0', ui_ok: '#66bb6a', ui_error: '#ef5350', ui_warn: '#ffca28',
+      prompt: '#4dd0e1', input_rule: '#0e4d5e', response_border: '#0e4d5e',
+      status_bar_bg: '#081216', session_label: '#26c6da', session_border: '#0e4d5e'
+    },
+    spinner: { waiting: ['(🌊)','(🐋)','(🫧)'], verbs: ['潜水','探索','聆听'] },
+    branding: { agent: '🌊 Oceanic', welcome: '潜入深海', prompt: '❯', label: 'ocean' }
+  },
+  {
+    id: 'vampire', name: 'Vampire', mode: 'dark',
+    cat: '暗红 · 哥特', desc: '暗黑哥特风，深红与黑的神秘气质',
+    bg: '#0d0505', fg: '#d4b0b0',
+    colors: {
+      banner_border: '#5c1010', banner_title: '#e53935', banner_accent: '#ff6f60',
+      banner_dim: '#2a0a0a', banner_text: '#d4b0b0', ui_accent: '#e53935',
+      ui_label: '#d4b0b0', ui_ok: '#66bb6a', ui_error: '#b71c1c', ui_warn: '#ffab00',
+      prompt: '#e53935', input_rule: '#5c1010', response_border: '#5c1010',
+      status_bar_bg: '#140808', session_label: '#e53935', session_border: '#5c1010'
+    },
+    spinner: { waiting: ['(🦇)','(🧛)','(🌕)'], verbs: ['hunting','stalking','feasting'] },
+    branding: { agent: '🧛 Vampire', welcome: '长夜永驻', prompt: '❯', label: 'vampire' }
+  },
+  {
+    id: 'cyberpunk', name: 'Cyberpunk', mode: 'dark',
+    cat: '赛博黄粉', desc: '赛博朋克风格，霓虹黄 + 洋红撞色',
+    bg: '#0a0a14', fg: '#d0d0e0',
+    colors: {
+      banner_border: '#ff00aa', banner_title: '#ffea00', banner_accent: '#ff0055',
+      banner_dim: '#2a1a3a', banner_text: '#d0d0e0', ui_accent: '#ffea00',
+      ui_label: '#d0d0e0', ui_ok: '#00ffaa', ui_error: '#ff0044', ui_warn: '#ff8800',
+      prompt: '#ffea00', input_rule: '#ff00aa', response_border: '#ff00aa',
+      status_bar_bg: '#0f0f1e', session_label: '#ffea00', session_border: '#ff00aa'
+    },
+    spinner: { waiting: ['(⚡)','(🔋)','(💀)'], verbs: ['hacking','overclocking','glitching'] },
+    branding: { agent: '⚡ Cyberpunk', welcome: '夜之城接入', prompt: '▶', label: 'cyber' }
+  },
+  {
+    id: 'forest', name: 'Forest', mode: 'dark',
+    cat: '森林绿', desc: '幽暗森林色调，墨绿与苔藓的自然感',
+    bg: '#0d1a0d', fg: '#b8c8a8',
+    colors: {
+      banner_border: '#1a4a1a', banner_title: '#4caf50', banner_accent: '#8bc34a',
+      banner_dim: '#1a2a1a', banner_text: '#b8c8a8', ui_accent: '#66bb6a',
+      ui_label: '#b8c8a8', ui_ok: '#4caf50', ui_error: '#c62828', ui_warn: '#ffee58',
+      prompt: '#8bc34a', input_rule: '#1a4a1a', response_border: '#1a4a1a',
+      status_bar_bg: '#0a140a', session_label: '#66bb6a', session_border: '#1a4a1a'
+    },
+    spinner: { waiting: ['(🌲)','(🍃)','(🌿)'], verbs: ['生长','呼吸','滋养'] },
+    branding: { agent: '🌲 Forest', welcome: '步入林间', prompt: '❯', label: 'forest' }
+  },
+  {
+    id: 'ink', name: 'Ink', mode: 'dark',
+    cat: '纯黑 · 极简', desc: '纯黑白极简主义，摒弃一切色彩干扰',
+    bg: '#000000', fg: '#cccccc',
+    colors: {
+      banner_border: '#333333', banner_title: '#ffffff', banner_accent: '#aaaaaa',
+      banner_dim: '#1a1a1a', banner_text: '#cccccc', ui_accent: '#ffffff',
+      ui_label: '#cccccc', ui_ok: '#88cc88', ui_error: '#cc6666', ui_warn: '#cccc66',
+      prompt: '#ffffff', input_rule: '#333333', response_border: '#333333',
+      status_bar_bg: '#0a0a0a', session_label: '#ffffff', session_border: '#333333'
+    },
+    spinner: { waiting: ['( )','( .)','(..)'], verbs: ['work','think','compute'] },
+    branding: { agent: '■ Ink', welcome: 'Less is more', prompt: '❯', label: 'ink' }
+  },
+  {
+    id: 'bloodmoon', name: 'Blood Moon', mode: 'dark',
+    cat: '血红月', desc: '暗红基调如血月当空，神秘而危险',
+    bg: '#1a0505', fg: '#d4a0a0',
+    colors: {
+      banner_border: '#6b0f0f', banner_title: '#ff1744', banner_accent: '#ff5252',
+      banner_dim: '#2a0a0a', banner_text: '#d4a0a0', ui_accent: '#ff1744',
+      ui_label: '#d4a0a0', ui_ok: '#ff6f60', ui_error: '#b71c1c', ui_warn: '#ffab40',
+      prompt: '#ff5252', input_rule: '#6b0f0f', response_border: '#6b0f0f',
+      status_bar_bg: '#200808', session_label: '#ff1744', session_border: '#6b0f0f'
+    },
+    spinner: { waiting: ['(🌕)','(🌖)','(🌑)'], verbs: ['rising','looming','eclipsing'] },
+    branding: { agent: '🌕 Blood Moon', welcome: '血月升起', prompt: '❯', label: 'bloodmoon' }
+  },
+  {
+    id: 'arctic', name: 'Arctic', mode: 'dark',
+    cat: '极夜冰蓝', desc: '极地永夜中的冰蓝色光芒，冷冽通透',
+    bg: '#0a1018', fg: '#b0c8e0',
+    colors: {
+      banner_border: '#0d3b5e', banner_title: '#4fc3f7', banner_accent: '#81d4fa',
+      banner_dim: '#0d1f2e', banner_text: '#b0c8e0', ui_accent: '#29b6f6',
+      ui_label: '#b0c8e0', ui_ok: '#66bb6a', ui_error: '#e53935', ui_warn: '#ffb74d',
+      prompt: '#81d4fa', input_rule: '#0d3b5e', response_border: '#0d3b5e',
+      status_bar_bg: '#08121a', session_label: '#4fc3f7', session_border: '#0d3b5e'
+    },
+    spinner: { waiting: ['(❄)','(🌨)','(🧊)'], verbs: ['freezing','crystallizing','snowing'] },
+    branding: { agent: '❄ Arctic', welcome: '极夜降临', prompt: '❯', label: 'arctic' }
+  },
+  {
+    id: 'royal', name: 'Royal', mode: 'dark',
+    cat: '帝王紫金', desc: '紫金配色如帝王华服，尊贵奢华',
+    bg: '#12081a', fg: '#d0c0e0',
+    colors: {
+      banner_border: '#4a1a6b', banner_title: '#ce93d8', banner_accent: '#ffd700',
+      banner_dim: '#2a1040', banner_text: '#d0c0e0', ui_accent: '#ce93d8',
+      ui_label: '#d0c0e0', ui_ok: '#81c784', ui_error: '#ef5350', ui_warn: '#ffd54f',
+      prompt: '#ffd700', input_rule: '#4a1a6b', response_border: '#4a1a6b',
+      status_bar_bg: '#180c22', session_label: '#ce93d8', session_border: '#4a1a6b'
+    },
+    spinner: { waiting: ['(👑)','(💎)','(⚜)'], verbs: ['敕令','诏书','裁决'] },
+    branding: { agent: '👑 Royal', welcome: '王权永固', prompt: '❯', label: 'royal' }
+  },
+  {
+    id: 'carbon', name: 'Carbon', mode: 'dark',
+    cat: '碳灰蓝', desc: '工业级碳灰，冷静克制不失质感',
+    bg: '#121418', fg: '#c0c4cc',
+    colors: {
+      banner_border: '#2a2e38', banner_title: '#5c8aff', banner_accent: '#8ab4ff',
+      banner_dim: '#1e2228', banner_text: '#c0c4cc', ui_accent: '#5c8aff',
+      ui_label: '#c0c4cc', ui_ok: '#66bb6a', ui_error: '#f44336', ui_warn: '#ffa726',
+      prompt: '#8ab4ff', input_rule: '#2a2e38', response_border: '#2a2e38',
+      status_bar_bg: '#0c0e12', session_label: '#5c8aff', session_border: '#2a2e38'
+    },
+    spinner: { waiting: ['(○)','(◔)','(◕)'], verbs: ['processing','synthesizing','compiling'] },
+    branding: { agent: '◆ Carbon', welcome: 'Carbon shell initialized', prompt: '❯', label: 'carbon' }
+  },
+  {
+    id: 'rust', name: 'Rust', mode: 'dark',
+    cat: '铁锈橙', desc: '铁锈般的暖橙色调，粗犷而温暖',
+    bg: '#18100a', fg: '#d4c0a8',
+    colors: {
+      banner_border: '#5a2a0a', banner_title: '#e65100', banner_accent: '#ff8f00',
+      banner_dim: '#2e1a0a', banner_text: '#d4c0a8', ui_accent: '#ff6d00',
+      ui_label: '#d4c0a8', ui_ok: '#8bc34a', ui_error: '#bf360c', ui_warn: '#ffb300',
+      prompt: '#ff8f00', input_rule: '#5a2a0a', response_border: '#5a2a0a',
+      status_bar_bg: '#1a120c', session_label: '#e65100', session_border: '#5a2a0a'
+    },
+    spinner: { waiting: ['(🔧)','(⚙)','(🔩)'], verbs: ['forging','smelting','hammering'] },
+    branding: { agent: '🔧 Rust', welcome: 'Rusty but trusty', prompt: '❯', label: 'rust' }
+  },
+
+  // ============================ SPECIAL DARK (12) ===========================
+  {
+    id: 'retro-amber', name: 'Retro Amber', mode: 'dark',
+    cat: '琥珀 CRT · 单色', desc: '模拟老式单色 CRT 终端机，整个界面只有一种琥珀色发光',
+    bg: '#1a0e00', fg: '#ffb000',
+    colors: {
+      banner_border: '#cc8800', banner_title: '#ffb000', banner_accent: '#ffcc44',
+      banner_dim: '#553300', banner_text: '#ffb000', ui_accent: '#ffb000',
+      ui_label: '#ffb000', ui_ok: '#ffcc44', ui_error: '#cc6600', ui_warn: '#ffdd66',
+      prompt: '#ffb000', input_rule: '#cc8800', response_border: '#cc8800',
+      status_bar_bg: '#0f0800', session_label: '#ffb000', session_border: '#cc8800'
+    },
+    spinner: { waiting: ['(≋)','(≈)','(~)'], verbs: ['scanning','rasterizing','phosphoring'] },
+    branding: { agent: '≋ Retro Amber', welcome: 'VT100 模拟器启动', prompt: '▸', label: 'retro' }
+  },
+  {
+    id: 'retro-green', name: 'Retro Green', mode: 'dark',
+    cat: '绿 CRT · IBM 3270', desc: 'IBM 绿屏终端风格，P1 荧光粉单色显示',
+    bg: '#001000', fg: '#33cc33',
+    colors: {
+      banner_border: '#1a881a', banner_title: '#33cc33', banner_accent: '#55ee55',
+      banner_dim: '#003300', banner_text: '#33cc33', ui_accent: '#33cc33',
+      ui_label: '#33cc33', ui_ok: '#44dd44', ui_error: '#116611', ui_warn: '#88ff44',
+      prompt: '#33cc33', input_rule: '#1a881a', response_border: '#1a881a',
+      status_bar_bg: '#000800', session_label: '#33cc33', session_border: '#1a881a'
+    },
+    spinner: { waiting: ['(·)','(:)','(☰)'], verbs: ['initializing','polling','buffering'] },
+    branding: { agent: '☰ Retro Green', welcome: 'IBM 3270 联机', prompt: '▸', label: 'green' }
+  },
+  {
+    id: 'tron', name: 'Tron', mode: 'dark',
+    cat: '创战纪 · 蓝光', desc: '纯黑背景 + 发光蓝色边框，光栅扫描线质感',
+    bg: '#000408', fg: '#00ccff',
+    colors: {
+      banner_border: '#0066ff', banner_title: '#00ccff', banner_accent: '#3399ff',
+      banner_dim: '#001a33', banner_text: '#00ccff', ui_accent: '#00ddff',
+      ui_label: '#00ccff', ui_ok: '#00ff88', ui_error: '#ff0055', ui_warn: '#ffaa00',
+      prompt: '#00eeff', input_rule: '#0066ff', response_border: '#0066ff',
+      status_bar_bg: '#000810', session_label: '#00ccff', session_border: '#0066ff'
+    },
+    spinner: { waiting: ['(◉)','(◎)','(○)'], verbs: ['initializing lightcycle','digitizing','gridlinking'] },
+    branding: { agent: '◉ Tron', welcome: '进入网格', prompt: '⤷', label: 'tron' }
+  },
+  {
+    id: 'hologram', name: 'Hologram', mode: 'dark',
+    cat: '全息彩虹 · 变色', desc: '每个界面元素使用不同色调，模拟全息贴纸的彩虹变幻',
+    bg: '#06060e', fg: '#d0d0ff',
+    colors: {
+      banner_border: '#ff00aa', banner_title: '#00ffcc', banner_accent: '#ffcc00',
+      banner_dim: '#2a1a3a', banner_text: '#d0d0ff', ui_accent: '#ff66cc',
+      ui_label: '#d0d0ff', ui_ok: '#00ff99', ui_error: '#ff3366', ui_warn: '#ffdd00',
+      prompt: '#66ffcc', input_rule: '#ff44aa', response_border: '#aa66ff',
+      status_bar_bg: '#0a0a18', session_label: '#66ccff', session_border: '#cc66ff'
+    },
+    spinner: { waiting: ['(🌈)','(✨)','(💫)'], verbs: ['diffracting','refracting','dispersing'] },
+    branding: { agent: '🌈 Hologram', welcome: '全息投影已激活', prompt: '✦', label: 'holo' }
+  },
+  {
+    id: 'aurora', name: 'Aurora', mode: 'dark',
+    cat: '极光 · 绿紫', desc: '北极光灵感，深空底色中流淌着绿紫色光带',
+    bg: '#060812', fg: '#c0d0e0',
+    colors: {
+      banner_border: '#2a1a4a', banner_title: '#00ff88', banner_accent: '#bb66ff',
+      banner_dim: '#12182a', banner_text: '#c0d0e0', ui_accent: '#44ffaa',
+      ui_label: '#c0d0e0', ui_ok: '#66ff88', ui_error: '#ff4466', ui_warn: '#ffdd66',
+      prompt: '#66ffcc', input_rule: '#4a2a7a', response_border: '#3a2a6a',
+      status_bar_bg: '#080a16', session_label: '#88ffbb', session_border: '#4a2a7a'
+    },
+    spinner: { waiting: ['(🌌)','(✨)','(🌠)'], verbs: ['dancing','shimmering','flowing'] },
+    branding: { agent: '🌌 Aurora', welcome: '极光绽放', prompt: '✦', label: 'aurora' }
+  },
+  {
+    id: 'plasma', name: 'Plasma', mode: 'dark',
+    cat: '等离子 · 电光', desc: '高能等离子体，紫色电光交织，能量感十足',
+    bg: '#0a0012', fg: '#d0a0ff',
+    colors: {
+      banner_border: '#6a00ff', banner_title: '#aa44ff', banner_accent: '#ff44dd',
+      banner_dim: '#2a004a', banner_text: '#d0a0ff', ui_accent: '#cc66ff',
+      ui_label: '#d0a0ff', ui_ok: '#44ffaa', ui_error: '#ff2266', ui_warn: '#ffcc00',
+      prompt: '#ff66ee', input_rule: '#6a00ff', response_border: '#8800ff',
+      status_bar_bg: '#0c0018', session_label: '#cc66ff', session_border: '#8800ff'
+    },
+    spinner: { waiting: ['(⚡)','(💥)','(🔥)'], verbs: ['ionizing','conducting','discharging'] },
+    branding: { agent: '⚡ Plasma', welcome: '离子流已激活', prompt: '⚡', label: 'plasma' }
+  },
+  {
+    id: 'vaporwave', name: 'Vaporwave', mode: 'dark',
+    cat: '蒸汽波 · 粉青', desc: '80s 复古未来美学，粉红 + 青蓝 + 网格落日感',
+    bg: '#1a0a2e', fg: '#e0b0ff',
+    colors: {
+      banner_border: '#ff00aa', banner_title: '#ff6ec7', banner_accent: '#00d4ff',
+      banner_dim: '#3a1a4e', banner_text: '#e0b0ff', ui_accent: '#ff6eb4',
+      ui_label: '#e0b0ff', ui_ok: '#00ffbf', ui_error: '#ff0044', ui_warn: '#ffcc00',
+      prompt: '#00d4ff', input_rule: '#ff00aa', response_border: '#d400aa',
+      status_bar_bg: '#1f0d35', session_label: '#ff7ac8', session_border: '#d400aa'
+    },
+    spinner: { waiting: ['(🌴)','(🌅)','(🎧)'], verbs: ['vibing','sampling','rewinding'] },
+    branding: { agent: '🌴 Vaporwave', welcome: 'A E S T H E T I C', prompt: '▶', label: 'vapor' }
+  },
+  {
+    id: 'wasteland', name: 'Wasteland', mode: 'dark',
+    cat: '废土 · 褪色', desc: '辐射后启示录风格，褪色沙尘色调，粗粝质感',
+    bg: '#12100a', fg: '#b8a890',
+    colors: {
+      banner_border: '#5a4a30', banner_title: '#c4a86a', banner_accent: '#8a7a50',
+      banner_dim: '#2a2216', banner_text: '#b8a890', ui_accent: '#c4a86a',
+      ui_label: '#b8a890', ui_ok: '#7a8a50', ui_error: '#8a3a2a', ui_warn: '#b8903a',
+      prompt: '#c4a86a', input_rule: '#5a4a30', response_border: '#5a4a30',
+      status_bar_bg: '#0e0c08', session_label: '#c4a86a', session_border: '#5a4a30'
+    },
+    spinner: { waiting: ['(☢)','(💀)','(⚰)'], verbs: ['scavenging','surviving','decaying'] },
+    branding: { agent: '☢ Wasteland', welcome: 'War... war never changes', prompt: '❯', label: 'waste' }
+  },
+  {
+    id: 'oled', name: 'OLED', mode: 'dark',
+    cat: '纯黑省电 · 极微光', desc: '大面积纯黑 #000000，OLED 屏幕真正不发光区域省电，仅必要元素微光',
+    bg: '#000000', fg: '#aaaaaa',
+    colors: {
+      banner_border: '#222222', banner_title: '#eeeeee', banner_accent: '#888888',
+      banner_dim: '#111111', banner_text: '#aaaaaa', ui_accent: '#cccccc',
+      ui_label: '#aaaaaa', ui_ok: '#446644', ui_error: '#664444', ui_warn: '#666644',
+      prompt: '#cccccc', input_rule: '#222222', response_border: '#222222',
+      status_bar_bg: '#050505', session_label: '#cccccc', session_border: '#222222'
+    },
+    spinner: { waiting: ['(·)','(:)','(∴)'], verbs: ['waiting','idling','saving'] },
+    branding: { agent: '○ OLED', welcome: 'Power saving mode', prompt: '·', label: 'oled' }
+  },
+  {
+    id: 'thermal', name: 'Thermal', mode: 'dark',
+    cat: '热成像 · 蓝焰', desc: '模拟热成像仪，蓝→紫→红→黄→白渐变，温度越高越亮',
+    bg: '#080810', fg: '#88ccff',
+    colors: {
+      banner_border: '#0044ff', banner_title: '#ff4400', banner_accent: '#ffaa00',
+      banner_dim: '#002266', banner_text: '#88ccff', ui_accent: '#ff6600',
+      ui_label: '#88ccff', ui_ok: '#00cc66', ui_error: '#ff0000', ui_warn: '#ffaa00',
+      prompt: '#ff4400', input_rule: '#0044ff', response_border: '#6600ff',
+      status_bar_bg: '#0a0a14', session_label: '#ff6600', session_border: '#4400cc'
+    },
+    spinner: { waiting: ['(🌡)','(🔥)','(🥵)'], verbs: ['scanning','measuring','calibrating'] },
+    branding: { agent: '🌡 Thermal', welcome: '热成像校准完成', prompt: '❯', label: 'thermal' }
+  },
+  {
+    id: 'starlight', name: 'Starlight', mode: 'dark',
+    cat: '星光 · 极简微光', desc: '夜空中的星光点缀，极简的黑白灰，只有星星般微光闪烁',
+    bg: '#070710', fg: '#b0b0cc',
+    colors: {
+      banner_border: '#2a2a4a', banner_title: '#ffffff', banner_accent: '#ddddee',
+      banner_dim: '#16162a', banner_text: '#b0b0cc', ui_accent: '#ccccff',
+      ui_label: '#b0b0cc', ui_ok: '#6688aa', ui_error: '#885566', ui_warn: '#aabb77',
+      prompt: '#ddddee', input_rule: '#2a2a4a', response_border: '#2a2a4a',
+      status_bar_bg: '#0a0a16', session_label: '#ddddee', session_border: '#2a2a4a'
+    },
+    spinner: { waiting: ['(✧)','(★)','(☆)'], verbs: ['twinkling','glimmering','constellating'] },
+    branding: { agent: '✧ Starlight', welcome: '星辰指引方向', prompt: '✧', label: 'starlight' }
+  },
+  {
+    id: 'neon-noir', name: 'Neon Noir', mode: 'dark',
+    cat: '黑色霓虹 · 暗雨', desc: '黑色电影 + 霓虹灯管光效，雨夜潮湿的街道光线',
+    bg: '#0a080e', fg: '#c0b0c8',
+    colors: {
+      banner_border: '#6600aa', banner_title: '#ff2266', banner_accent: '#00ddff',
+      banner_dim: '#1a0a2a', banner_text: '#c0b0c8', ui_accent: '#ff4477',
+      ui_label: '#c0b0c8', ui_ok: '#00ddaa', ui_error: '#ff0044', ui_warn: '#ffaa00',
+      prompt: '#ff3366', input_rule: '#6600aa', response_border: '#440088',
+      status_bar_bg: '#0c0a12', session_label: '#ff4477', session_border: '#440088'
+    },
+    spinner: { waiting: ['(🌧)','(💡)','(🚬)'], verbs: ['stalking','shadowing','smoking'] },
+    branding: { agent: '🌧 Neon Noir', welcome: '雨夜，霓虹，孤独', prompt: '❯', label: 'noir' }
+  },
+  {
+    id: 'sakura-night', name: 'Sakura Night', mode: 'dark',
+    cat: '夜樱 · 粉墨', desc: '暗夜中的樱花，墨色基底 + 粉红花瓣点缀，和风物哀',
+    bg: '#120a10', fg: '#c8b0b8',
+    colors: {
+      banner_border: '#4a1a2a', banner_title: '#ff8da1', banner_accent: '#ffb7c5',
+      banner_dim: '#2a1220', banner_text: '#c8b0b8', ui_accent: '#ff7090',
+      ui_label: '#c8b0b8', ui_ok: '#88aa77', ui_error: '#cc3355', ui_warn: '#ddbb66',
+      prompt: '#ffb7c5', input_rule: '#4a1a2a', response_border: '#5a2030',
+      status_bar_bg: '#0e080c', session_label: '#ff8da1', session_border: '#5a2030'
+    },
+    spinner: { waiting: ['(🌸)','(🌙)','(🦋)'], verbs: ['飘落','散华','咏叹'] },
+    branding: { agent: '🌸 Sakura Night', welcome: '夜桜見物', prompt: '❀', label: 'sakura' }
+  },
+  {
+    id: 'matcha', name: 'Matcha', mode: 'dark',
+    cat: '抹茶 · 和敬', desc: '日式抹茶色调，深绿基底 + 暖黄点缀，茶道的宁静',
+    bg: '#0e1410', fg: '#b0c0a0',
+    colors: {
+      banner_border: '#2a4a2a', banner_title: '#8bc34a', banner_accent: '#cddc39',
+      banner_dim: '#1a2818', banner_text: '#b0c0a0', ui_accent: '#9ccc65',
+      ui_label: '#b0c0a0', ui_ok: '#66bb6a', ui_error: '#bf4a2a', ui_warn: '#d4a030',
+      prompt: '#aed581', input_rule: '#2a4a2a', response_border: '#2a4a2a',
+      status_bar_bg: '#0a100c', session_label: '#9ccc65', session_border: '#2a4a2a'
+    },
+    spinner: { waiting: ['(🍵)','(🎋)','(🌿)'], verbs: ['点茶','静心','禅定'] },
+    branding: { agent: '🍵 Matcha', welcome: '一期一会', prompt: '❯', label: 'matcha' }
+  },
+  {
+    id: 'rosepine', name: 'Rose Pine', mode: 'dark',
+    cat: '松玫瑰 · 暖粉', desc: '柔软的暖粉棕暗色调，像松木与玫瑰的交织',
+    bg: '#191724', fg: '#e0def4',
+    colors: {
+      banner_border: '#524f67', banner_title: '#ebbcba', banner_accent: '#c4a7e7',
+      banner_dim: '#2a2838', banner_text: '#e0def4', ui_accent: '#ebbcba',
+      ui_label: '#e0def4', ui_ok: '#9ccfd8', ui_error: '#eb6f92', ui_warn: '#f6c177',
+      prompt: '#ebbcba', input_rule: '#524f67', response_border: '#524f67',
+      status_bar_bg: '#13111d', session_label: '#ebbcba', session_border: '#524f67'
+    },
+    spinner: { waiting: ['(🌹)','(🌲)','(🌙)'], verbs: ['blooming','pining','dreaming'] },
+    branding: { agent: '🌹 Rose Pine', welcome: 'Soft whispers', prompt: '❯', label: 'rosepine' }
+  },
+  {
+    id: 'everforest', name: 'Everforest', mode: 'dark',
+    cat: '常绿森林 · 暖绿', desc: '常青树林的暖绿色调，自然、柔和、耐看',
+    bg: '#1e2320', fg: '#d3c6aa',
+    colors: {
+      banner_border: '#424f3a', banner_title: '#a7c080', banner_accent: '#dbbc7f',
+      banner_dim: '#2b3328', banner_text: '#d3c6aa', ui_accent: '#83c092',
+      ui_label: '#d3c6aa', ui_ok: '#a7c080', ui_error: '#e67e80', ui_warn: '#e69875',
+      prompt: '#dbbc7f', input_rule: '#424f3a', response_border: '#424f3a',
+      status_bar_bg: '#171c18', session_label: '#a7c080', session_border: '#424f3a'
+    },
+    spinner: { waiting: ['(🌲)','(🌳)','(🍃)'], verbs: ['rustling','growing','breathing'] },
+    branding: { agent: '🌲 Everforest', welcome: 'Forest bathing', prompt: '❯', label: 'everforest' }
+  },
+
+  // ============================ SPECIAL DARK II (11) ===========================
+  {
+    id: 'blueprint', name: 'Blueprint', mode: 'dark',
+    cat: '蓝图 · 工程图纸', desc: 'CAD 蓝图风格，深蓝底 + 白线和网格，如工程设计图',
+    bg: '#0a1628', fg: '#a0c8e8',
+    colors: {
+      banner_border: '#1a4a8a', banner_title: '#4da6ff', banner_accent: '#80ccff',
+      banner_dim: '#0d2040', banner_text: '#a0c8e8', ui_accent: '#5bb8ff',
+      ui_label: '#a0c8e8', ui_ok: '#66eebb', ui_error: '#ff5566', ui_warn: '#ffbb44',
+      prompt: '#80ccff', input_rule: '#1a4a8a', response_border: '#1a4a8a',
+      status_bar_bg: '#081220', session_label: '#5bb8ff', session_border: '#1a4a8a'
+    },
+    spinner: { waiting: ['(📐)','(📏)','(✏)'], verbs: ['drafting','dimensioning','projecting'] },
+    branding: { agent: '📐 Blueprint', welcome: '图纸已展开', prompt: '▸', label: 'blueprint' }
+  },
+  {
+    id: 'chalkboard', name: 'Chalkboard', mode: 'dark',
+    cat: '黑板 · 粉笔字', desc: '课堂黑板质感，深灰绿底 + 白色粉笔字 + 粉笔灰',
+    bg: '#1a2418', fg: '#d0ddd0',
+    colors: {
+      banner_border: '#4a5a44', banner_title: '#ffffff', banner_accent: '#e8f0e0',
+      banner_dim: '#2a3428', banner_text: '#d0ddd0', ui_accent: '#f0f8e8',
+      ui_label: '#d0ddd0', ui_ok: '#aaddaa', ui_error: '#ff8888', ui_warn: '#ffff88',
+      prompt: '#ffffff', input_rule: '#4a5a44', response_border: '#4a5a44',
+      status_bar_bg: '#141e12', session_label: '#ffffff', session_border: '#4a5a44'
+    },
+    spinner: { waiting: ['(✎)','(✏)','(✍)'], verbs: ['writing','erasing','chalking'] },
+    branding: { agent: '✎ Chalkboard', welcome: '上课了', prompt: '❯', label: 'chalk' }
+  },
+  {
+    id: 'steampunk', name: 'Steampunk', mode: 'dark',
+    cat: '蒸汽朋克 · 黄铜', desc: '维多利亚工业革命美学，黄铜齿轮 + 铜绿色调',
+    bg: '#1a1008', fg: '#c0a870',
+    colors: {
+      banner_border: '#8a5a2a', banner_title: '#d4a44a', banner_accent: '#e8c870',
+      banner_dim: '#3a2a16', banner_text: '#c0a870', ui_accent: '#d4a44a',
+      ui_label: '#c0a870', ui_ok: '#6a9a5a', ui_error: '#a04030', ui_warn: '#d4aa30',
+      prompt: '#e8c870', input_rule: '#8a5a2a', response_border: '#8a5a2a',
+      status_bar_bg: '#140c06', session_label: '#d4a44a', session_border: '#8a5a2a'
+    },
+    spinner: { waiting: ['(⚙)','(🔧)','(⛓)'], verbs: ['steaming','ticking','cranking'] },
+    branding: { agent: '⚙ Steampunk', welcome: '齿轮开始转动', prompt: '❯', label: 'steam' }
+  },
+  {
+    id: 'underwater', name: 'Underwater', mode: 'dark',
+    cat: '深海 · 荧光', desc: '深海潜水器视角，墨蓝 + 发光荧光生物光点',
+    bg: '#020d18', fg: '#80b8d0',
+    colors: {
+      banner_border: '#004466', banner_title: '#00bbee', banner_accent: '#00ffcc',
+      banner_dim: '#001a33', banner_text: '#80b8d0', ui_accent: '#00ccee',
+      ui_label: '#80b8d0', ui_ok: '#66ffbf', ui_error: '#ff3366', ui_warn: '#ffee44',
+      prompt: '#00ffee', input_rule: '#004466', response_border: '#004466',
+      status_bar_bg: '#000a14', session_label: '#00bbee', session_border: '#004466'
+    },
+    spinner: { waiting: ['(🐟)','(🦑)','(🫧)'], verbs: ['diving','floating','glowing'] },
+    branding: { agent: '🐟 Underwater', welcome: '下潜到 6000 米', prompt: '·', label: 'deepsea' }
+  },
+  {
+    id: 'campfire', name: 'Campfire', mode: 'dark',
+    cat: '篝火 · 户外', desc: '夜晚露营篝火，暗红琥珀余烬 + 温暖火焰光',
+    bg: '#140a04', fg: '#d0b090',
+    colors: {
+      banner_border: '#5a2a0a', banner_title: '#ff6600', banner_accent: '#ffaa33',
+      banner_dim: '#2e1a0a', banner_text: '#d0b090', ui_accent: '#ff7722',
+      ui_label: '#d0b090', ui_ok: '#889944', ui_error: '#cc3322', ui_warn: '#ffaa22',
+      prompt: '#ffaa33', input_rule: '#5a2a0a', response_border: '#5a2a0a',
+      status_bar_bg: '#100804', session_label: '#ff6600', session_border: '#5a2a0a'
+    },
+    spinner: { waiting: ['(🔥)','(🏕)','(🌙)'], verbs: ['crackling','burning','glowing'] },
+    branding: { agent: '🔥 Campfire', welcome: '篝火燃起，故事开始', prompt: '❯', label: 'campfire' }
+  },
+  {
+    id: 'desert-night', name: 'Desert Night', mode: 'dark',
+    cat: '沙漠之夜 · 星辰', desc: '撒哈拉深夜，靛蓝天幕 + 金色沙丘 + 璀璨星空',
+    bg: '#0a0e1e', fg: '#c8c0b8',
+    colors: {
+      banner_border: '#3a4a6a', banner_title: '#e8c070', banner_accent: '#ffccaa',
+      banner_dim: '#1a1e2e', banner_text: '#c8c0b8', ui_accent: '#e8c070',
+      ui_label: '#c8c0b8', ui_ok: '#88aa77', ui_error: '#cc5544', ui_warn: '#ddbb55',
+      prompt: '#e8c070', input_rule: '#3a4a6a', response_border: '#3a4a6a',
+      status_bar_bg: '#080c18', session_label: '#e8c070', session_border: '#3a4a6a'
+    },
+    spinner: { waiting: ['(🐪)','(🌙)','(✨)'], verbs: ['drifting','shifting','twinkling'] },
+    branding: { agent: '🐪 Desert Night', welcome: '沙丘之上，星辰之下', prompt: '✦', label: 'desert' }
+  },
+  {
+    id: 'brew', name: 'Brew', mode: 'dark',
+    cat: '咖啡 · 精酿', desc: '手冲咖啡色调，深棕 + 奶泡白 + 焦糖金',
+    bg: '#120d08', fg: '#c0a890',
+    colors: {
+      banner_border: '#4a2a14', banner_title: '#d4a060', banner_accent: '#f0d0a0',
+      banner_dim: '#2a1a0e', banner_text: '#c0a890', ui_accent: '#d4a060',
+      ui_label: '#c0a890', ui_ok: '#8a9a6a', ui_error: '#a04030', ui_warn: '#d4a040',
+      prompt: '#f0d0a0', input_rule: '#4a2a14', response_border: '#4a2a14',
+      status_bar_bg: '#0e0a06', session_label: '#d4a060', session_border: '#4a2a14'
+    },
+    spinner: { waiting: ['(☕)','(🫘)','(🍞)'], verbs: ['brewing','steeping','roasting'] },
+    branding: { agent: '☕ Brew', welcome: '又一杯手冲', prompt: '❯', label: 'brew' }
+  },
+  {
+    id: 'gemstone', name: 'Gemstone', mode: 'dark',
+    cat: '宝石 · 璀璨', desc: '珠宝店展柜，紫水晶 + 翡翠绿 + 蓝宝石交相辉映',
+    bg: '#0a0a18', fg: '#c8c0e8',
+    colors: {
+      banner_border: '#4a2a8a', banner_title: '#cc66ff', banner_accent: '#00eebb',
+      banner_dim: '#1a1a38', banner_text: '#c8c0e8', ui_accent: '#bb55ff',
+      ui_label: '#c8c0e8', ui_ok: '#00dd88', ui_error: '#ff3377', ui_warn: '#ffcc00',
+      prompt: '#cc66ff', input_rule: '#4a2a8a', response_border: '#5a3aaa',
+      status_bar_bg: '#080814', session_label: '#cc66ff', session_border: '#5a3aaa'
+    },
+    spinner: { waiting: ['(💎)','(💠)','(🔮)'], verbs: ['sparkling','refracting','shining'] },
+    branding: { agent: '💎 Gemstone', welcome: '宝石陈列中', prompt: '✦', label: 'gem' }
+  },
+  {
+    id: 'coral-reef', name: 'Coral Reef', mode: 'dark',
+    cat: '珊瑚礁 · 热带', desc: '热带珊瑚礁主题，粉橙 + 蓝绿 + 明亮艳丽',
+    bg: '#0a1220', fg: '#c8d8e0',
+    colors: {
+      banner_border: '#0066aa', banner_title: '#ff6699', banner_accent: '#00ddcc',
+      banner_dim: '#0a1a3a', banner_text: '#c8d8e0', ui_accent: '#ff5588',
+      ui_label: '#c8d8e0', ui_ok: '#44dd88', ui_error: '#ff3355', ui_warn: '#ffcc44',
+      prompt: '#ff6699', input_rule: '#0066aa', response_border: '#0066aa',
+      status_bar_bg: '#08101a', session_label: '#ff5588', session_border: '#0066aa'
+    },
+    spinner: { waiting: ['(🐠)','(🐡)','(🪸)'], verbs: ['swimming','diving','blooming'] },
+    branding: { agent: '🐠 Coral Reef', welcome: '珊瑚花园', prompt: '❯', label: 'coral' }
+  },
+  {
+    id: 'storm', name: 'Storm', mode: 'dark',
+    cat: '暴风雨 · 雷鸣', desc: '暴风雨夜，深灰 + 闪电黄 + 雨幕暗紫',
+    bg: '#0a0a10', fg: '#b0b0c0',
+    colors: {
+      banner_border: '#2a2a4a', banner_title: '#ddeeff', banner_accent: '#ffdd00',
+      banner_dim: '#1a1a28', banner_text: '#b0b0c0', ui_accent: '#bbccff',
+      ui_label: '#b0b0c0', ui_ok: '#88aa88', ui_error: '#dd3333', ui_warn: '#ffdd00',
+      prompt: '#ddeeff', input_rule: '#2a2a4a', response_border: '#3a3a6a',
+      status_bar_bg: '#08080e', session_label: '#ddeeff', session_border: '#3a3a6a'
+    },
+    spinner: { waiting: ['(🌩)','(⚡)','(🌧)'], verbs: ['thundering','lightning','pouring'] },
+    branding: { agent: '🌩 Storm', welcome: '暴风雨中', prompt: '⚡', label: 'storm' }
+  },
+  {
+    id: 'carbon-fiber', name: 'Carbon Fiber', mode: 'dark',
+    cat: '碳纤维 · 工业', desc: '碳纤维编织纹理感，哑光黑灰 + 精密工业锋芒',
+    bg: '#0e0e12', fg: '#a0a4b0',
+    colors: {
+      banner_border: '#2a2e36', banner_title: '#d0d4dd', banner_accent: '#7a8298',
+      banner_dim: '#1a1c22', banner_text: '#a0a4b0', ui_accent: '#c0c4cc',
+      ui_label: '#a0a4b0', ui_ok: '#6a8a6a', ui_error: '#8a4a4a', ui_warn: '#8a8a4a',
+      prompt: '#d0d4dd', input_rule: '#2a2e36', response_border: '#2a2e36',
+      status_bar_bg: '#0a0a0e', session_label: '#d0d4dd', session_border: '#2a2e36'
+    },
+    spinner: { waiting: ['(◈)','(◇)','(◆)'], verbs: ['weaving','laminating','curing'] },
+    branding: { agent: '◈ Carbon Fiber', welcome: 'Toray T1100 编织完成', prompt: '❯', label: 'carbonf' }
+  },
+
+  // ============================ SPECIAL LIGHT (4) ===========================
+  {
+    id: 'autumn', name: 'Autumn', mode: 'light',
+    cat: '秋叶 · 金黄', desc: '深秋落叶色调，枫红 + 金黄 + 枯棕交织',
+    bg: '#f8f0e0', fg: '#3a2818',
+    colors: {
+      banner_border: '#c47a20', banner_title: '#b84410', banner_accent: '#e8a030',
+      banner_dim: '#e0d0b8', banner_text: '#3a2818', ui_accent: '#cc6622',
+      ui_label: '#3a2818', ui_ok: '#5a7a3a', ui_error: '#a03020', ui_warn: '#c08020',
+      prompt: '#b84410', input_rule: '#c47a20', response_border: '#c47a20',
+      status_bar_bg: '#f0e8d4', session_label: '#b84410', session_border: '#c47a20'
+    },
+    spinner: { waiting: ['(🍂)','(🍁)','(🌾)'], verbs: ['falling','rustling','harvesting'] },
+    branding: { agent: '🍂 Autumn', welcome: '秋已深', prompt: '❯', label: 'autumn' }
+  },
+  {
+    id: 'polaroid', name: 'Polaroid', mode: 'light',
+    cat: '拍立得 · 怀旧', desc: '拍立得相纸质感，米白边框 + 淡褪色照片',
+    bg: '#faf6f0', fg: '#4a3a2a',
+    colors: {
+      banner_border: '#c8c0b0', banner_title: '#8a6a4a', banner_accent: '#b8987a',
+      banner_dim: '#e0d8cc', banner_text: '#4a3a2a', ui_accent: '#9a7a5a',
+      ui_label: '#4a3a2a', ui_ok: '#6a8a5a', ui_error: '#a05040', ui_warn: '#a08050',
+      prompt: '#8a6a4a', input_rule: '#c8c0b0', response_border: '#c8c0b0',
+      status_bar_bg: '#f4f0e8', session_label: '#8a6a4a', session_border: '#c8c0b0'
+    },
+    spinner: { waiting: ['(📷)','(🖼)','(📸)'], verbs: ['developing','exposing','focusing'] },
+    branding: { agent: '📷 Polaroid', welcome: '咔嚓', prompt: '❯', label: 'polaroid' }
+  },
+  {
+    id: 'snowfield', name: 'Snowfield', mode: 'light',
+    cat: '雪原 · 纯白', desc: '北极雪原的极致白，刺眼白光 + 淡蓝阴影',
+    bg: '#fafcff', fg: '#2a3038',
+    colors: {
+      banner_border: '#d0d8e8', banner_title: '#4488cc', banner_accent: '#80b8ee',
+      banner_dim: '#e0e8f4', banner_text: '#2a3038', ui_accent: '#4488cc',
+      ui_label: '#2a3038', ui_ok: '#559966', ui_error: '#cc4455', ui_warn: '#cc8833',
+      prompt: '#4488cc', input_rule: '#d0d8e8', response_border: '#d0d8e8',
+      status_bar_bg: '#f0f4fa', session_label: '#4488cc', session_border: '#d0d8e8'
+    },
+    spinner: { waiting: ['(❄)','(⛄)','(🧊)'], verbs: ['shivering','freezing','glinting'] },
+    branding: { agent: '❄ Snowfield', welcome: '零下 40 度', prompt: '❯', label: 'snowfield' }
+  },
+  {
+    id: 'amber-glass', name: 'Amber Glass', mode: 'light',
+    cat: '琥珀玻璃 · 通透', desc: '琥珀色玻璃瓶质感，温暖半透明 + 蜂蜜光泽',
+    bg: '#faf4e8', fg: '#3a2a18',
+    colors: {
+      banner_border: '#c8a060', banner_title: '#a87030', banner_accent: '#d4b070',
+      banner_dim: '#e8dcc8', banner_text: '#3a2a18', ui_accent: '#b88040',
+      ui_label: '#3a2a18', ui_ok: '#6a8a4a', ui_error: '#a04030', ui_warn: '#c09030',
+      prompt: '#a87030', input_rule: '#c8a060', response_border: '#c8a060',
+      status_bar_bg: '#f4ece0', session_label: '#a87030', session_border: '#c8a060'
+    },
+    spinner: { waiting: ['(🍯)','(🫙)','(✨)'], verbs: ['pouring','glowing','shimmering'] },
+    branding: { agent: '🍯 Amber Glass', welcome: '透过琥珀色的光', prompt: '❯', label: 'amber' }
+  },
+
+  // ============================ LIGHT (14) ===========================
+  {
+    id: 'frost', name: 'Frost', mode: 'light',
+    cat: '冰蓝 · 清爽', desc: '干净利落的冰蓝色调，适合明亮环境',
+    bg: '#ffffff', fg: '#263238',
+    colors: {
+      banner_border: '#0288d1', banner_title: '#01579b', banner_accent: '#4fc3f7',
+      banner_dim: '#b0bec5', banner_text: '#263238', ui_accent: '#0288d1',
+      ui_label: '#263238', ui_ok: '#2e7d32', ui_error: '#c62828', ui_warn: '#f57f17',
+      prompt: '#0288d1', input_rule: '#0288d1', response_border: '#0288d1',
+      status_bar_bg: '#f0f4f8', session_label: '#0288d1', session_border: '#0288d1'
+    },
+    spinner: { waiting: ['(❄)','(⛄)','(🌨)'], verbs: ['计算中','思考中','分析中'] },
+    branding: { agent: '❄ Frost', welcome: '霜降', prompt: '❯', label: 'Frost' }
+  },
+  {
+    id: 'sepia', name: 'Sepia', mode: 'light',
+    cat: '暖褐 · 复古', desc: '怀旧棕色调，如旧纸书页般温润',
+    bg: '#fdf6e3', fg: '#3c2f1f',
+    colors: {
+      banner_border: '#b58900', banner_title: '#6b4226', banner_accent: '#cb4b16',
+      banner_dim: '#cdba96', banner_text: '#3c2f1f', ui_accent: '#b58900',
+      ui_label: '#3c2f1f', ui_ok: '#2d7d46', ui_error: '#b33b24', ui_warn: '#b8860b',
+      prompt: '#b58900', input_rule: '#b58900', response_border: '#b58900',
+      status_bar_bg: '#f5eace', session_label: '#b58900', session_border: '#b58900'
+    },
+    spinner: { waiting: ['(📜)','(🖋)','(📖)'], verbs: ['翻页','书写','研磨'] },
+    branding: { agent: '📜 Sepia', welcome: '旧时光', prompt: '❧', label: 'Sepia' }
+  },
+  {
+    id: 'blossom', name: 'Blossom', mode: 'light',
+    cat: '粉玫 · 优雅', desc: '柔粉色调宛如春日樱花，优雅温柔',
+    bg: '#faf0f5', fg: '#3e2723',
+    colors: {
+      banner_border: '#e91e63', banner_title: '#880e4f', banner_accent: '#f06292',
+      banner_dim: '#d7b8cc', banner_text: '#3e2723', ui_accent: '#e91e63',
+      ui_label: '#3e2723', ui_ok: '#2e7d32', ui_error: '#b71c1c', ui_warn: '#e65100',
+      prompt: '#e91e63', input_rule: '#e91e63', response_border: '#e91e63',
+      status_bar_bg: '#f5e0ec', session_label: '#e91e63', session_border: '#e91e63'
+    },
+    spinner: { waiting: ['(🌸)','(🌺)','(🦋)'], verbs: ['绽放','飘落','轻舞'] },
+    branding: { agent: '🌸 Blossom', welcome: '花开时节', prompt: '🌸', label: 'Blossom' }
+  },
+  {
+    id: 'solarized', name: 'Solarized', mode: 'light',
+    cat: '柔光 · 护眼', desc: '经典 Solarized 明色调，暖黄底绿蓝搭配',
+    bg: '#fdf6e3', fg: '#586e75',
+    colors: {
+      banner_border: '#93a1a1', banner_title: '#268bd2', banner_accent: '#2aa198',
+      banner_dim: '#eee8d5', banner_text: '#586e75', ui_accent: '#268bd2',
+      ui_label: '#586e75', ui_ok: '#859900', ui_error: '#dc322f', ui_warn: '#b58900',
+      prompt: '#2aa198', input_rule: '#93a1a1', response_border: '#93a1a1',
+      status_bar_bg: '#f0e8d5', session_label: '#268bd2', session_border: '#93a1a1'
+    },
+    spinner: { waiting: ['(☀)','(🌤)','(⛅)'], verbs: ['illuminating','shining','warming'] },
+    branding: { agent: '☀ Solarized', welcome: 'Gentle light', prompt: '❯', label: 'solar' }
+  },
+  {
+    id: 'latte', name: 'Latte', mode: 'light',
+    cat: '暖拿铁 · 猫茶', desc: 'Catppuccin Latte 暖调，像一杯拿铁',
+    bg: '#eff1f5', fg: '#4c4f69',
+    colors: {
+      banner_border: '#9ca0b0', banner_title: '#8839ef', banner_accent: '#1e66f5',
+      banner_dim: '#ccd0da', banner_text: '#4c4f69', ui_accent: '#ea76cb',
+      ui_label: '#4c4f69', ui_ok: '#40a02b', ui_error: '#d20f39', ui_warn: '#df8e1d',
+      prompt: '#1e66f5', input_rule: '#9ca0b0', response_border: '#9ca0b0',
+      status_bar_bg: '#e6e9ef', session_label: '#8839ef', session_border: '#9ca0b0'
+    },
+    spinner: { waiting: ['(☕)','(🐱)','(😌)'], verbs: ['brewing','steeping','pouring'] },
+    branding: { agent: '☕ Latte', welcome: 'Coffee time~', prompt: '❯', label: 'latte' }
+  },
+  {
+    id: 'gruvbox-light', name: 'Gruvbox Light', mode: 'light',
+    cat: '复古亮黄', desc: 'Gruvbox 亮色版，温暖怀旧的麦田色',
+    bg: '#fbf1c7', fg: '#3c3836',
+    colors: {
+      banner_border: '#bdae93', banner_title: '#b57614', banner_accent: '#427b58',
+      banner_dim: '#d5c4a1', banner_text: '#3c3836', ui_accent: '#8f3f71',
+      ui_label: '#3c3836', ui_ok: '#79740e', ui_error: '#9d0006', ui_warn: '#b57614',
+      prompt: '#b57614', input_rule: '#bdae93', response_border: '#bdae93',
+      status_bar_bg: '#f3e9c5', session_label: '#b57614', session_border: '#bdae93'
+    },
+    spinner: { waiting: ['(🌾)','(🎵)','(☀)'], verbs: ['chilling','vibing','strumming'] },
+    branding: { agent: '🌾 Gruvbox Light', welcome: 'Golden hour', prompt: '❯', label: 'gruvlight' }
+  },
+  {
+    id: 'nord-light', name: 'Nord Light', mode: 'light',
+    cat: '寒霜白', desc: 'Nord 亮色版，清冷通透的霜白色调',
+    bg: '#eceff4', fg: '#2e3440',
+    colors: {
+      banner_border: '#d8dee9', banner_title: '#5e81ac', banner_accent: '#8fbcbb',
+      banner_dim: '#d0d5e0', banner_text: '#2e3440', ui_accent: '#81a1c1',
+      ui_label: '#2e3440', ui_ok: '#a3be8c', ui_error: '#bf616a', ui_warn: '#ebcb8b',
+      prompt: '#5e81ac', input_rule: '#d8dee9', response_border: '#d8dee9',
+      status_bar_bg: '#e2e6ed', session_label: '#5e81ac', session_border: '#d8dee9'
+    },
+    spinner: { waiting: ['(❄)','(🧊)','(🌨)'], verbs: ['shimmering','frosting','glaciering'] },
+    branding: { agent: '❄ Nord Light', welcome: 'Winter morning', prompt: '❯', label: 'nordlight' }
+  },
+  {
+    id: 'vanilla', name: 'Vanilla', mode: 'light',
+    cat: '香草白 · 极简', desc: '纯白极简，只保留最基础的视觉层次',
+    bg: '#ffffff', fg: '#333333',
+    colors: {
+      banner_border: '#cccccc', banner_title: '#000000', banner_accent: '#666666',
+      banner_dim: '#e0e0e0', banner_text: '#333333', ui_accent: '#1976d2',
+      ui_label: '#333333', ui_ok: '#388e3c', ui_error: '#d32f2f', ui_warn: '#f57c00',
+      prompt: '#1976d2', input_rule: '#cccccc', response_border: '#cccccc',
+      status_bar_bg: '#f5f5f5', session_label: '#1976d2', session_border: '#cccccc'
+    },
+    spinner: { waiting: ['(·)','(··)','(···)'], verbs: ['working','thinking','processing'] },
+    branding: { agent: '■ Vanilla', welcome: 'Clean slate', prompt: '❯', label: 'vanilla' }
+  },
+  {
+    id: 'lavender', name: 'Lavender', mode: 'light',
+    cat: '薰衣草紫', desc: '淡紫色调如薰衣草田，柔和浪漫',
+    bg: '#f8f0fa', fg: '#3a2a40',
+    colors: {
+      banner_border: '#ce93d8', banner_title: '#7b1fa2', banner_accent: '#ba68c8',
+      banner_dim: '#e1c8e8', banner_text: '#3a2a40', ui_accent: '#7b1fa2',
+      ui_label: '#3a2a40', ui_ok: '#43a047', ui_error: '#c62828', ui_warn: '#e65100',
+      prompt: '#7b1fa2', input_rule: '#ce93d8', response_border: '#ce93d8',
+      status_bar_bg: '#f0e4f4', session_label: '#7b1fa2', session_border: '#ce93d8'
+    },
+    spinner: { waiting: ['(💜)','(🪻)','(🌸)'], verbs: ['blooming','fragrancing','gentling'] },
+    branding: { agent: '💜 Lavender', welcome: '花田漫步', prompt: '❯', label: 'lavender' }
+  },
+  {
+    id: 'mint', name: 'Mint', mode: 'light',
+    cat: '薄荷绿 · 清凉', desc: '薄荷般的清爽绿色，清新自然',
+    bg: '#f0faf5', fg: '#1b3a2a',
+    colors: {
+      banner_border: '#80cbc4', banner_title: '#00695c', banner_accent: '#4db6ac',
+      banner_dim: '#c8e6dc', banner_text: '#1b3a2a', ui_accent: '#00897b',
+      ui_label: '#1b3a2a', ui_ok: '#2e7d32', ui_error: '#c62828', ui_warn: '#ef6c00',
+      prompt: '#00695c', input_rule: '#80cbc4', response_border: '#80cbc4',
+      status_bar_bg: '#e4f5ed', session_label: '#00695c', session_border: '#80cbc4'
+    },
+    spinner: { waiting: ['(🌿)','(🍃)','(🌱)'], verbs: ['fresh','cool','breeze'] },
+    branding: { agent: '🌿 Mint', welcome: 'Feeling fresh', prompt: '❯', label: 'mint' }
+  },
+  {
+    id: 'peachy', name: 'Peachy', mode: 'light',
+    cat: '蜜桃橙 · 元气', desc: '蜜桃般温暖的橙粉色，活力满满',
+    bg: '#fef5f0', fg: '#3a2a1a',
+    colors: {
+      banner_border: '#ffab91', banner_title: '#e65100', banner_accent: '#ff8a65',
+      banner_dim: '#f0d0c0', banner_text: '#3a2a1a', ui_accent: '#ff6d00',
+      ui_label: '#3a2a1a', ui_ok: '#43a047', ui_error: '#c62828', ui_warn: '#f57f17',
+      prompt: '#e65100', input_rule: '#ffab91', response_border: '#ffab91',
+      status_bar_bg: '#f8e8e0', session_label: '#e65100', session_border: '#ffab91'
+    },
+    spinner: { waiting: ['(🍑)','(🍊)','(☀)'], verbs: ['juicing','sweetening','glowing'] },
+    branding: { agent: '🍑 Peachy', welcome: 'Sweet day~', prompt: '❯', label: 'peachy' }
+  },
+  {
+    id: 'sky', name: 'Sky', mode: 'light',
+    cat: '天空蓝 · 晴朗', desc: '晴空万里的天蓝色，开阔明快',
+    bg: '#f0f8ff', fg: '#1a2a3a',
+    colors: {
+      banner_border: '#90caf9', banner_title: '#0d47a1', banner_accent: '#42a5f5',
+      banner_dim: '#bbdefb', banner_text: '#1a2a3a', ui_accent: '#1565c0',
+      ui_label: '#1a2a3a', ui_ok: '#2e7d32', ui_error: '#c62828', ui_warn: '#e65100',
+      prompt: '#0d47a1', input_rule: '#90caf9', response_border: '#90caf9',
+      status_bar_bg: '#e3f0fa', session_label: '#0d47a1', session_border: '#90caf9'
+    },
+    spinner: { waiting: ['(☀)','(⛅)','(🌈)'], verbs: ['shining','floating','soaring'] },
+    branding: { agent: '☀ Sky', welcome: 'Clear skies ahead', prompt: '❯', label: 'sky' }
+  },
+  {
+    id: 'rosey', name: 'Rosey', mode: 'light',
+    cat: '玫瑰园 · 馥郁', desc: '淡红粉玫瑰色，温柔浪漫的庄园气息',
+    bg: '#fef0f0', fg: '#3a2020',
+    colors: {
+      banner_border: '#ef9a9a', banner_title: '#c62828', banner_accent: '#e57373',
+      banner_dim: '#e8c0c0', banner_text: '#3a2020', ui_accent: '#d32f2f',
+      ui_label: '#3a2020', ui_ok: '#388e3c', ui_error: '#b71c1c', ui_warn: '#e65100',
+      prompt: '#c62828', input_rule: '#ef9a9a', response_border: '#ef9a9a',
+      status_bar_bg: '#f8e4e4', session_label: '#c62828', session_border: '#ef9a9a'
+    },
+    spinner: { waiting: ['(🌹)','(🌷)','(🌺)'], verbs: ['blooming','fragrant','petalling'] },
+    branding: { agent: '🌹 Rosey', welcome: '玫瑰庄园', prompt: '❯', label: 'rosey' }
+  },
+  {
+    id: 'bamboo', name: 'Bamboo', mode: 'light',
+    cat: '竹青 · 禅意', desc: '竹青色与暖木搭配，东方禅意的宁静',
+    bg: '#f4f8f0', fg: '#2a3a1a',
+    colors: {
+      banner_border: '#a5d6a7', banner_title: '#2e7d32', banner_accent: '#66bb6a',
+      banner_dim: '#c8e6c7', banner_text: '#2a3a1a', ui_accent: '#388e3c',
+      ui_label: '#2a3a1a', ui_ok: '#1b5e20', ui_error: '#c62828', ui_warn: '#f57f17',
+      prompt: '#2e7d32', input_rule: '#a5d6a7', response_border: '#a5d6a7',
+      status_bar_bg: '#e8f0e4', session_label: '#2e7d32', session_border: '#a5d6a7'
+    },
+    spinner: { waiting: ['(🎋)','(🍃)','(🌿)'], verbs: ['静坐','冥想','品茗'] },
+    branding: { agent: '🎋 Bamboo', welcome: '虚怀若谷', prompt: '❯', label: 'bamboo' }
+  }
+];
+
+// ====================================================================
+// GENERATE YAML
+// ====================================================================
+function genYaml(s) {
+  const c = s.colors;
+  const sp = s.spinner;
+  const b = s.branding;
+  return `name: ${s.id}
+description: "${s.cat} — ${s.desc}"
+colors:
+  banner_border: "${c.banner_border}"
+  banner_title: "${c.banner_title}"
+  banner_accent: "${c.banner_accent}"
+  banner_dim: "${c.banner_dim}"
+  banner_text: "${c.banner_text}"
+  ui_accent: "${c.ui_accent}"
+  ui_label: "${c.ui_label}"
+  ui_ok: "${c.ui_ok}"
+  ui_error: "${c.ui_error}"
+  ui_warn: "${c.ui_warn}"
+  prompt: "${c.prompt}"
+  input_rule: "${c.input_rule}"
+  response_border: "${c.response_border}"
+  status_bar_bg: "${c.status_bar_bg}"
+  session_label: "${c.session_label}"
+  session_border: "${c.session_border}"
+spinner:
+  waiting_faces:${sp.waiting.map(f => `\n    - "${f}"`).join('')}
+  thinking_verbs:${sp.verbs.map(v => `\n    - "${v}"`).join('')}
+branding:
+  agent_name: "${b.agent}"
+  welcome: "${b.welcome}"
+  prompt_symbol: "${b.prompt}"
+  response_label: "${b.label}"
+tool_prefix: "┊"`;
+}
+
+// ====================================================================
+// BUILD CARDS
+// ====================================================================
+function buildCard(s) {
+  const c = s.colors;
+  const isDark = s.mode === 'dark';
+
+  return {
+    id: s.id,
+    mode: s.mode,
+    html: `
+    <div class="card skin-${s.id}" data-mode="${s.mode}" data-id="${s.id}" style="background:${s.bg}">
+      <div class="terminal" style="background:${s.bg}; color:${s.fg}">
+        <div class="term-line"><span style="color:${c.banner_border}">╭─</span><span style="color:${c.banner_title}"> ✦ ${s.branding.agent} ✦ </span><span class="dim" style="color:${c.banner_dim}">v3.0  —  #${s.id.slice(0,4)}</span><span style="color:${c.banner_border}"> ─────────────────╮</span></div>
+        <div class="term-line"><span style="color:${c.banner_border}">│</span><span style="color:${c.banner_accent}">  ╭──╮ ╭──╮ ╭──╮ ╭──╮ ╭──╮ ╭──╮</span><span class="dim" style="color:${c.banner_dim}">  ｜</span><span style="color:${c.banner_accent}">│</span></div>
+        <div class="term-line"><span style="color:${c.banner_border}">│</span><span style="color:${c.banner_accent}">  ╰┬╯ │  │ │  │ │  │ │  │ │  │</span><span class="dim" style="color:${c.banner_dim}">  ${s.name}</span><span style="color:${c.banner_accent}">│</span></div>
+        <div class="term-line"><span style="color:${c.banner_border}">│</span><span style="color:${c.banner_accent}">   ╯  ╰──╯ ╰──╯ ╰──╯ ╰──╯ ╰──╯</span><span class="dim" style="color:${c.banner_dim}">  ｜</span><span style="color:${c.banner_accent}">│</span></div>
+        <div class="term-line"><span style="color:${c.banner_border}">╰──────────────────────────────────────╯</span></div>
+        <div class="spacer"></div>
+        <div class="term-line"><span style="color:${c.ui_ok}">✔</span><span class="dim" style="color:${c.banner_dim}"> 模型: deepseek-v4  ·  tools: 14  ·  记忆: 载入</span></div>
+        <div class="spacer"></div>
+        <div class="term-line"><span style="color:${c.banner_border}">┃</span></div>
+        <div class="term-line"><span style="color:${c.prompt}">${s.branding.prompt}</span> 帮我查一下今天的行情</div>
+        <div class="spacer"></div>
+        <div class="term-line"><span style="color:${c.response_border}">╭─</span><span style="color:${c.ui_accent}"> ${s.branding.label}</span><span class="dim" style="color:${c.banner_dim}"> @ 2026-06-03</span><span style="color:${c.response_border}"> ───────────────╮</span></div>
+        <div class="term-line"><span style="color:${c.response_border}">│</span><span style="color:${c.banner_text}">  上证 3342  <span style="color:${c.ui_ok}">+1.23%</span>  ·  深证 10524  <span style="color:${c.ui_ok}">+0.87%</span></span><span style="color:${c.response_border}">│</span></div>
+        <div class="term-line"><span style="color:${c.response_border}">│</span><span style="color:${c.banner_text}">  成交额 8942 亿  ·  北向 <span style="color:${c.ui_ok}">+28.6 亿</span></span><span style="color:${c.response_border}">│</span></div>
+        <div class="term-line"><span style="color:${c.response_border}">╰────────────────────────────────╯</span></div>
+        <div class="spacer"></div>
+        <div class="term-line"><span style="color:${c.prompt}">${s.branding.prompt}</span> <span class="dim" style="color:${c.banner_dim}">正在等待输入...</span></div>
+      </div>
+      <div class="status-bar" style="background:${c.status_bar_bg}; color:${c.banner_dim}">
+        <div class="status-left"><span style="color:${c.session_label}">${s.branding.agent}</span><span style="color:${c.ui_ok}"> ● 在线</span><span>14 tools</span></div>
+        <div class="status-right">tok: 1.8k  |  0.03s</div>
+      </div>
+      <div class="card-footer" style="background:${s.bg}; border-top:1px solid ${isDark ? '#1e1e2e' : '#e8e0e0'}">
+        <div class="meta">
+          <span class="name" style="color:${c.ui_accent}">${s.name}</span>
+          <span class="tag ${isDark ? 'tag-dark' : 'tag-light'}">${isDark ? '🌙 深色' : '☀ 浅色'}</span>
+        </div>
+        <div class="desc" style="color:${isDark ? '#888' : '#666'}">${s.cat} — ${s.desc}</div>
+        <div class="actions">
+          <button class="copy-btn" style="color:${c.ui_accent}" onclick="copySkin('${s.id}')">
+            📋 复制 YAML 配置
+          </button>
+        </div>
+      </div>
+    </div>`
+  };
+}
+
+// ====================================================================
+// RENDER
+// ====================================================================
+const grid = document.getElementById('grid');
+SKINS.forEach(s => grid.innerHTML += buildCard(s).html);
+
+// Update counts
+document.getElementById('darkCount').textContent = SKINS.filter(s => s.mode === 'dark').length;
+document.getElementById('lightCount').textContent = SKINS.filter(s => s.mode === 'light').length;
+document.getElementById('totalCount').textContent = SKINS.length;
+
+// ====================================================================
+// COPY TOAST
+// ====================================================================
+function copySkin(id) {
+  const s = SKINS.find(x => x.id === id);
+  const yaml = genYaml(s);
+  navigator.clipboard.writeText(yaml).then(() => {
+    const toast = document.getElementById('toast');
+    toast.textContent = `✅ 「${s.name}」YAML 已复制！保存为 ~/.hermes/skins/${s.id}.yaml 即可使用`;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+    // Flash button
+    const btns = document.querySelectorAll(`[data-id="${id}"] .copy-btn`);
+    btns.forEach(b => {
+      b.textContent = '✅ 已复制!';
+      b.classList.add('copied');
+      setTimeout(() => { b.textContent = '📋 复制 YAML 配置'; b.classList.remove('copied'); }, 2000);
+    });
+  });
+}
+
+// ====================================================================
+// FILTER
+// ====================================================================
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.card').forEach(card => {
+      if (filter === 'all') card.classList.remove('hidden');
+      else card.classList.toggle('hidden', card.dataset.mode !== filter);
+    });
+  });
+});
+</script>
+</body>
+</html>

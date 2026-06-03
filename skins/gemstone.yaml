@@ -1,0 +1,35 @@
+name: gemstone
+description: "宝石 · 璀璨 — 珠宝店展柜，紫水晶 + 翡翠绿 + 蓝宝石交相辉映"
+mode: dark
+colors:
+  banner_border: "#4a2a8a"
+  banner_title: "#cc66ff"
+  banner_accent: "#00eebb"
+  banner_dim: "#1a1a38"
+  banner_text: "#c8c0e8"
+  ui_accent: "#bb55ff"
+  ui_label: "#c8c0e8"
+  ui_ok: "#00dd88"
+  ui_error: "#ff3377"
+  ui_warn: "#ffcc00"
+  prompt: "#cc66ff"
+  input_rule: "#4a2a8a"
+  response_border: "#5a3aaa"
+  status_bar_bg: "#080814"
+  session_label: "#cc66ff"
+  session_border: "#5a3aaa"
+spinner:
+  waiting_faces:
+    - "(💎)"
+    - "(💠)"
+    - "(🔮)"
+  thinking_verbs:
+    - "sparkling"
+    - "refracting"
+    - "shining"
+branding:
+  agent_name: "💎 Gemstone"
+  welcome: "宝石陈列中"
+  prompt_symbol: "✦"
+  response_label: "gem"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: chalkboard
+description: "黑板 · 粉笔字 — 课堂黑板质感，深灰绿底 + 白色粉笔字 + 粉笔灰"
+mode: dark
+colors:
+  banner_border: "#4a5a44"
+  banner_title: "#ffffff"
+  banner_accent: "#e8f0e0"
+  banner_dim: "#2a3428"
+  banner_text: "#d0ddd0"
+  ui_accent: "#f0f8e8"
+  ui_label: "#d0ddd0"
+  ui_ok: "#aaddaa"
+  ui_error: "#ff8888"
+  ui_warn: "#ffff88"
+  prompt: "#ffffff"
+  input_rule: "#4a5a44"
+  response_border: "#4a5a44"
+  status_bar_bg: "#141e12"
+  session_label: "#ffffff"
+  session_border: "#4a5a44"
+spinner:
+  waiting_faces:
+    - "(✎)"
+    - "(✏)"
+    - "(✍)"
+  thinking_verbs:
+    - "writing"
+    - "erasing"
+    - "chalking"
+branding:
+  agent_name: "✎ Chalkboard"
+  welcome: "上课了"
+  prompt_symbol: "❯"
+  response_label: "chalk"
+tool_prefix: "┊"

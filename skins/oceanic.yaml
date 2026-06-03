@@ -1,0 +1,35 @@
+name: oceanic
+description: "深海蓝绿 — 深海色调，蓝绿渐变如海水般沉静"
+mode: dark
+colors:
+  banner_border: "#0e4d5e"
+  banner_title: "#26c6da"
+  banner_accent: "#4dd0e1"
+  banner_dim: "#0d2f38"
+  banner_text: "#b8d4d0"
+  ui_accent: "#26c6da"
+  ui_label: "#b8d4d0"
+  ui_ok: "#66bb6a"
+  ui_error: "#ef5350"
+  ui_warn: "#ffca28"
+  prompt: "#4dd0e1"
+  input_rule: "#0e4d5e"
+  response_border: "#0e4d5e"
+  status_bar_bg: "#081216"
+  session_label: "#26c6da"
+  session_border: "#0e4d5e"
+spinner:
+  waiting_faces:
+    - "(🌊)"
+    - "(🐋)"
+    - "(🫧)"
+  thinking_verbs:
+    - "潜水"
+    - "探索"
+    - "聆听"
+branding:
+  agent_name: "🌊 Oceanic"
+  welcome: "潜入深海"
+  prompt_symbol: "❯"
+  response_label: "ocean"
+tool_prefix: "┊"

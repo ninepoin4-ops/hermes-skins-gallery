@@ -1,0 +1,35 @@
+name: campfire
+description: "篝火 · 户外 — 夜晚露营篝火，暗红琥珀余烬 + 温暖火焰光"
+mode: dark
+colors:
+  banner_border: "#5a2a0a"
+  banner_title: "#ff6600"
+  banner_accent: "#ffaa33"
+  banner_dim: "#2e1a0a"
+  banner_text: "#d0b090"
+  ui_accent: "#ff7722"
+  ui_label: "#d0b090"
+  ui_ok: "#889944"
+  ui_error: "#cc3322"
+  ui_warn: "#ffaa22"
+  prompt: "#ffaa33"
+  input_rule: "#5a2a0a"
+  response_border: "#5a2a0a"
+  status_bar_bg: "#100804"
+  session_label: "#ff6600"
+  session_border: "#5a2a0a"
+spinner:
+  waiting_faces:
+    - "(🔥)"
+    - "(🏕)"
+    - "(🌙)"
+  thinking_verbs:
+    - "crackling"
+    - "burning"
+    - "glowing"
+branding:
+  agent_name: "🔥 Campfire"
+  welcome: "篝火燃起，故事开始"
+  prompt_symbol: "❯"
+  response_label: "campfire"
+tool_prefix: "┊"

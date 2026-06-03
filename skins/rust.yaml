@@ -1,0 +1,35 @@
+name: rust
+description: "铁锈橙 — 铁锈般的暖橙色调，粗犷而温暖"
+mode: dark
+colors:
+  banner_border: "#5a2a0a"
+  banner_title: "#e65100"
+  banner_accent: "#ff8f00"
+  banner_dim: "#2e1a0a"
+  banner_text: "#d4c0a8"
+  ui_accent: "#ff6d00"
+  ui_label: "#d4c0a8"
+  ui_ok: "#8bc34a"
+  ui_error: "#bf360c"
+  ui_warn: "#ffb300"
+  prompt: "#ff8f00"
+  input_rule: "#5a2a0a"
+  response_border: "#5a2a0a"
+  status_bar_bg: "#1a120c"
+  session_label: "#e65100"
+  session_border: "#5a2a0a"
+spinner:
+  waiting_faces:
+    - "(🔧)"
+    - "(⚙)"
+    - "(🔩)"
+  thinking_verbs:
+    - "forging"
+    - "smelting"
+    - "hammering"
+branding:
+  agent_name: "🔧 Rust"
+  welcome: "Rusty but trusty"
+  prompt_symbol: "❯"
+  response_label: "rust"
+tool_prefix: "┊"

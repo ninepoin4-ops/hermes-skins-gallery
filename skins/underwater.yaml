@@ -1,0 +1,35 @@
+name: underwater
+description: "深海 · 荧光 — 深海潜水器视角，墨蓝 + 发光荧光生物光点"
+mode: dark
+colors:
+  banner_border: "#004466"
+  banner_title: "#00bbee"
+  banner_accent: "#00ffcc"
+  banner_dim: "#001a33"
+  banner_text: "#80b8d0"
+  ui_accent: "#00ccee"
+  ui_label: "#80b8d0"
+  ui_ok: "#66ffbf"
+  ui_error: "#ff3366"
+  ui_warn: "#ffee44"
+  prompt: "#00ffee"
+  input_rule: "#004466"
+  response_border: "#004466"
+  status_bar_bg: "#000a14"
+  session_label: "#00bbee"
+  session_border: "#004466"
+spinner:
+  waiting_faces:
+    - "(🐟)"
+    - "(🦑)"
+    - "(🫧)"
+  thinking_verbs:
+    - "diving"
+    - "floating"
+    - "glowing"
+branding:
+  agent_name: "🐟 Underwater"
+  welcome: "下潜到 6000 米"
+  prompt_symbol: "·"
+  response_label: "deepsea"
+tool_prefix: "┊"

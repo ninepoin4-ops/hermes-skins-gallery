@@ -1,0 +1,35 @@
+name: synthwave
+description: "合成波粉紫 — 80 年代复古霓虹，粉紫 + 冰蓝"
+mode: dark
+colors:
+  banner_border: "#ff007f"
+  banner_title: "#ff00aa"
+  banner_accent: "#00ffff"
+  banner_dim: "#3a1a4e"
+  banner_text: "#e0c0ff"
+  ui_accent: "#ff00aa"
+  ui_label: "#e0c0ff"
+  ui_ok: "#00ffbf"
+  ui_error: "#ff0040"
+  ui_warn: "#ffd000"
+  prompt: "#00ffff"
+  input_rule: "#ff007f"
+  response_border: "#ff007f"
+  status_bar_bg: "#22103a"
+  session_label: "#ff00aa"
+  session_border: "#ff007f"
+spinner:
+  waiting_faces:
+    - "(🌈)"
+    - "(🎸)"
+    - "(💜)"
+  thinking_verbs:
+    - "合成"
+    - "采样"
+    - "混音"
+branding:
+  agent_name: "🎸 Synthwave"
+  welcome: "穿越到 1984"
+  prompt_symbol: "▶"
+  response_label: "synth"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: desert-night
+description: "沙漠之夜 · 星辰 — 撒哈拉深夜，靛蓝天幕 + 金色沙丘 + 璀璨星空"
+mode: dark
+colors:
+  banner_border: "#3a4a6a"
+  banner_title: "#e8c070"
+  banner_accent: "#ffccaa"
+  banner_dim: "#1a1e2e"
+  banner_text: "#c8c0b8"
+  ui_accent: "#e8c070"
+  ui_label: "#c8c0b8"
+  ui_ok: "#88aa77"
+  ui_error: "#cc5544"
+  ui_warn: "#ddbb55"
+  prompt: "#e8c070"
+  input_rule: "#3a4a6a"
+  response_border: "#3a4a6a"
+  status_bar_bg: "#080c18"
+  session_label: "#e8c070"
+  session_border: "#3a4a6a"
+spinner:
+  waiting_faces:
+    - "(🐪)"
+    - "(🌙)"
+    - "(✨)"
+  thinking_verbs:
+    - "drifting"
+    - "shifting"
+    - "twinkling"
+branding:
+  agent_name: "🐪 Desert Night"
+  welcome: "沙丘之上，星辰之下"
+  prompt_symbol: "✦"
+  response_label: "desert"
+tool_prefix: "┊"

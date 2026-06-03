@@ -1,0 +1,35 @@
+name: nebula
+description: "星云紫 · 霓虹青 — 深邃太空感，紫青渐变交错"
+mode: dark
+colors:
+  banner_border: "#7c4dff"
+  banner_title: "#b388ff"
+  banner_accent: "#00e5ff"
+  banner_dim: "#4a4a7a"
+  banner_text: "#c8c8e8"
+  ui_accent: "#b388ff"
+  ui_label: "#c8c8e8"
+  ui_ok: "#69f0ae"
+  ui_error: "#ff5252"
+  ui_warn: "#ffd740"
+  prompt: "#00e5ff"
+  input_rule: "#7c4dff"
+  response_border: "#7c4dff"
+  status_bar_bg: "#13132e"
+  session_label: "#b388ff"
+  session_border: "#7c4dff"
+spinner:
+  waiting_faces:
+    - "(◉)"
+    - "(◎)"
+    - "(◈)"
+  thinking_verbs:
+    - "计算中"
+    - "思考中"
+    - "分析中"
+branding:
+  agent_name: "✦ 星云"
+  welcome: "星云引擎已启动"
+  prompt_symbol: "✦"
+  response_label: "星云"
+tool_prefix: "┊"

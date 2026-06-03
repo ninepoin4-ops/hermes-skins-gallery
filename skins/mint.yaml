@@ -1,0 +1,35 @@
+name: mint
+description: "薄荷绿 · 清凉 — 薄荷般的清爽绿色，清新自然"
+mode: light
+colors:
+  banner_border: "#80cbc4"
+  banner_title: "#00695c"
+  banner_accent: "#4db6ac"
+  banner_dim: "#c8e6dc"
+  banner_text: "#1b3a2a"
+  ui_accent: "#00897b"
+  ui_label: "#1b3a2a"
+  ui_ok: "#2e7d32"
+  ui_error: "#c62828"
+  ui_warn: "#ef6c00"
+  prompt: "#00695c"
+  input_rule: "#80cbc4"
+  response_border: "#80cbc4"
+  status_bar_bg: "#e4f5ed"
+  session_label: "#00695c"
+  session_border: "#80cbc4"
+spinner:
+  waiting_faces:
+    - "(🌿)"
+    - "(🍃)"
+    - "(🌱)"
+  thinking_verbs:
+    - "fresh"
+    - "cool"
+    - "breeze"
+branding:
+  agent_name: "🌿 Mint"
+  welcome: "Feeling fresh"
+  prompt_symbol: "❯"
+  response_label: "mint"
+tool_prefix: "┊"

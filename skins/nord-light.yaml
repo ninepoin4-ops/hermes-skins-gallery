@@ -1,0 +1,35 @@
+name: nord-light
+description: "寒霜白 — Nord 亮色版，清冷通透的霜白色调"
+mode: light
+colors:
+  banner_border: "#d8dee9"
+  banner_title: "#5e81ac"
+  banner_accent: "#8fbcbb"
+  banner_dim: "#d0d5e0"
+  banner_text: "#2e3440"
+  ui_accent: "#81a1c1"
+  ui_label: "#2e3440"
+  ui_ok: "#a3be8c"
+  ui_error: "#bf616a"
+  ui_warn: "#ebcb8b"
+  prompt: "#5e81ac"
+  input_rule: "#d8dee9"
+  response_border: "#d8dee9"
+  status_bar_bg: "#e2e6ed"
+  session_label: "#5e81ac"
+  session_border: "#d8dee9"
+spinner:
+  waiting_faces:
+    - "(❄)"
+    - "(🧊)"
+    - "(🌨)"
+  thinking_verbs:
+    - "shimmering"
+    - "frosting"
+    - "glaciering"
+branding:
+  agent_name: "❄ Nord Light"
+  welcome: "Winter morning"
+  prompt_symbol: "❯"
+  response_label: "nordlight"
+tool_prefix: "┊"

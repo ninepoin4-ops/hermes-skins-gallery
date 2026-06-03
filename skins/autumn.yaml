@@ -1,0 +1,35 @@
+name: autumn
+description: "秋叶 · 金黄 — 深秋落叶色调，枫红 + 金黄 + 枯棕交织"
+mode: light
+colors:
+  banner_border: "#c47a20"
+  banner_title: "#b84410"
+  banner_accent: "#e8a030"
+  banner_dim: "#e0d0b8"
+  banner_text: "#3a2818"
+  ui_accent: "#cc6622"
+  ui_label: "#3a2818"
+  ui_ok: "#5a7a3a"
+  ui_error: "#a03020"
+  ui_warn: "#c08020"
+  prompt: "#b84410"
+  input_rule: "#c47a20"
+  response_border: "#c47a20"
+  status_bar_bg: "#f0e8d4"
+  session_label: "#b84410"
+  session_border: "#c47a20"
+spinner:
+  waiting_faces:
+    - "(🍂)"
+    - "(🍁)"
+    - "(🌾)"
+  thinking_verbs:
+    - "falling"
+    - "rustling"
+    - "harvesting"
+branding:
+  agent_name: "🍂 Autumn"
+  welcome: "秋已深"
+  prompt_symbol: "❯"
+  response_label: "autumn"
+tool_prefix: "┊"

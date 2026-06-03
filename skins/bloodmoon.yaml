@@ -1,0 +1,35 @@
+name: bloodmoon
+description: "血红月 — 暗红基调如血月当空，神秘而危险"
+mode: dark
+colors:
+  banner_border: "#6b0f0f"
+  banner_title: "#ff1744"
+  banner_accent: "#ff5252"
+  banner_dim: "#2a0a0a"
+  banner_text: "#d4a0a0"
+  ui_accent: "#ff1744"
+  ui_label: "#d4a0a0"
+  ui_ok: "#ff6f60"
+  ui_error: "#b71c1c"
+  ui_warn: "#ffab40"
+  prompt: "#ff5252"
+  input_rule: "#6b0f0f"
+  response_border: "#6b0f0f"
+  status_bar_bg: "#200808"
+  session_label: "#ff1744"
+  session_border: "#6b0f0f"
+spinner:
+  waiting_faces:
+    - "(🌕)"
+    - "(🌖)"
+    - "(🌑)"
+  thinking_verbs:
+    - "rising"
+    - "looming"
+    - "eclipsing"
+branding:
+  agent_name: "🌕 Blood Moon"
+  welcome: "血月升起"
+  prompt_symbol: "❯"
+  response_label: "bloodmoon"
+tool_prefix: "┊"

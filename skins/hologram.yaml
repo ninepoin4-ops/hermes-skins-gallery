@@ -1,0 +1,35 @@
+name: hologram
+description: "全息彩虹 · 变色 — 每个界面元素使用不同色调，模拟全息贴纸的彩虹变幻"
+mode: dark
+colors:
+  banner_border: "#ff00aa"
+  banner_title: "#00ffcc"
+  banner_accent: "#ffcc00"
+  banner_dim: "#2a1a3a"
+  banner_text: "#d0d0ff"
+  ui_accent: "#ff66cc"
+  ui_label: "#d0d0ff"
+  ui_ok: "#00ff99"
+  ui_error: "#ff3366"
+  ui_warn: "#ffdd00"
+  prompt: "#66ffcc"
+  input_rule: "#ff44aa"
+  response_border: "#aa66ff"
+  status_bar_bg: "#0a0a18"
+  session_label: "#66ccff"
+  session_border: "#cc66ff"
+spinner:
+  waiting_faces:
+    - "(🌈)"
+    - "(✨)"
+    - "(💫)"
+  thinking_verbs:
+    - "diffracting"
+    - "refracting"
+    - "dispersing"
+branding:
+  agent_name: "🌈 Hologram"
+  welcome: "全息投影已激活"
+  prompt_symbol: "✦"
+  response_label: "holo"
+tool_prefix: "┊"

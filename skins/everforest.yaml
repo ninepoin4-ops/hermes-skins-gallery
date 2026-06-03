@@ -1,0 +1,35 @@
+name: everforest
+description: "常绿森林 · 暖绿 — 常青树林的暖绿色调，自然、柔和、耐看"
+mode: dark
+colors:
+  banner_border: "#424f3a"
+  banner_title: "#a7c080"
+  banner_accent: "#dbbc7f"
+  banner_dim: "#2b3328"
+  banner_text: "#d3c6aa"
+  ui_accent: "#83c092"
+  ui_label: "#d3c6aa"
+  ui_ok: "#a7c080"
+  ui_error: "#e67e80"
+  ui_warn: "#e69875"
+  prompt: "#dbbc7f"
+  input_rule: "#424f3a"
+  response_border: "#424f3a"
+  status_bar_bg: "#171c18"
+  session_label: "#a7c080"
+  session_border: "#424f3a"
+spinner:
+  waiting_faces:
+    - "(🌲)"
+    - "(🌳)"
+    - "(🍃)"
+  thinking_verbs:
+    - "rustling"
+    - "growing"
+    - "breathing"
+branding:
+  agent_name: "🌲 Everforest"
+  welcome: "Forest bathing"
+  prompt_symbol: "❯"
+  response_label: "everforest"
+tool_prefix: "┊"

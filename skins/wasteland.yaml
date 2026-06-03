@@ -1,0 +1,35 @@
+name: wasteland
+description: "废土 · 褪色 — 辐射后启示录风格，褪色沙尘色调，粗粝质感"
+mode: dark
+colors:
+  banner_border: "#5a4a30"
+  banner_title: "#c4a86a"
+  banner_accent: "#8a7a50"
+  banner_dim: "#2a2216"
+  banner_text: "#b8a890"
+  ui_accent: "#c4a86a"
+  ui_label: "#b8a890"
+  ui_ok: "#7a8a50"
+  ui_error: "#8a3a2a"
+  ui_warn: "#b8903a"
+  prompt: "#c4a86a"
+  input_rule: "#5a4a30"
+  response_border: "#5a4a30"
+  status_bar_bg: "#0e0c08"
+  session_label: "#c4a86a"
+  session_border: "#5a4a30"
+spinner:
+  waiting_faces:
+    - "(☢)"
+    - "(💀)"
+    - "(⚰)"
+  thinking_verbs:
+    - "scavenging"
+    - "surviving"
+    - "decaying"
+branding:
+  agent_name: "☢ Wasteland"
+  welcome: "War... war never changes"
+  prompt_symbol: "❯"
+  response_label: "waste"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: nord
+description: "极地蓝灰 — 北欧极简风，冷静的蓝灰调"
+mode: dark
+colors:
+  banner_border: "#4c566a"
+  banner_title: "#88c0d0"
+  banner_accent: "#a3be8c"
+  banner_dim: "#3b4252"
+  banner_text: "#d8dee9"
+  ui_accent: "#81a1c1"
+  ui_label: "#d8dee9"
+  ui_ok: "#a3be8c"
+  ui_error: "#bf616a"
+  ui_warn: "#ebcb8b"
+  prompt: "#88c0d0"
+  input_rule: "#4c566a"
+  response_border: "#4c566a"
+  status_bar_bg: "#242933"
+  session_label: "#88c0d0"
+  session_border: "#4c566a"
+spinner:
+  waiting_faces:
+    - "(❄)"
+    - "(⛄)"
+    - "(🌨)"
+  thinking_verbs:
+    - "计算"
+    - "思考"
+    - "分析"
+branding:
+  agent_name: "❄ Nord"
+  welcome: "极地接入"
+  prompt_symbol: "❯"
+  response_label: "nord"
+tool_prefix: "┊"

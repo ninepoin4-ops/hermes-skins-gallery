@@ -1,0 +1,35 @@
+name: cyberpunk
+description: "赛博黄粉 — 赛博朋克风格，霓虹黄 + 洋红撞色"
+mode: dark
+colors:
+  banner_border: "#ff00aa"
+  banner_title: "#ffea00"
+  banner_accent: "#ff0055"
+  banner_dim: "#2a1a3a"
+  banner_text: "#d0d0e0"
+  ui_accent: "#ffea00"
+  ui_label: "#d0d0e0"
+  ui_ok: "#00ffaa"
+  ui_error: "#ff0044"
+  ui_warn: "#ff8800"
+  prompt: "#ffea00"
+  input_rule: "#ff00aa"
+  response_border: "#ff00aa"
+  status_bar_bg: "#0f0f1e"
+  session_label: "#ffea00"
+  session_border: "#ff00aa"
+spinner:
+  waiting_faces:
+    - "(⚡)"
+    - "(🔋)"
+    - "(💀)"
+  thinking_verbs:
+    - "hacking"
+    - "overclocking"
+    - "glitching"
+branding:
+  agent_name: "⚡ Cyberpunk"
+  welcome: "夜之城接入"
+  prompt_symbol: "▶"
+  response_label: "cyber"
+tool_prefix: "┊"

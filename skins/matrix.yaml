@@ -1,0 +1,35 @@
+name: matrix
+description: "黑客绿 · 极简 — 纯黑底 + 荧光绿，CRT 终端即视感"
+mode: dark
+colors:
+  banner_border: "#00cc33"
+  banner_title: "#00ff41"
+  banner_accent: "#7fff00"
+  banner_dim: "#1a3a1a"
+  banner_text: "#33ff55"
+  ui_accent: "#00ff41"
+  ui_label: "#33ff55"
+  ui_ok: "#00ff41"
+  ui_error: "#ff0033"
+  ui_warn: "#ffff00"
+  prompt: "#00ff41"
+  input_rule: "#00cc33"
+  response_border: "#00cc33"
+  status_bar_bg: "#0a0a0a"
+  session_label: "#00ff41"
+  session_border: "#00cc33"
+spinner:
+  waiting_faces:
+    - "(>)"
+    - "(>>)"
+    - "(>>>)"
+  thinking_verbs:
+    - "processing"
+    - "computing"
+    - "parsing"
+branding:
+  agent_name: "⎋ MATRIX"
+  welcome: "Wake up, Neo..."
+  prompt_symbol: "$"
+  response_label: "root"
+tool_prefix: "┊"

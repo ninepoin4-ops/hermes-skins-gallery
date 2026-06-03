@@ -1,0 +1,476 @@
+{
+  "total": 67,
+  "dark": 49,
+  "light": 18,
+  "skins": [
+    {
+      "id": "nebula",
+      "name": "Nebula",
+      "mode": "dark",
+      "cat": "星云紫 · 霓虹青",
+      "desc": "深邃太空感，紫青渐变交错"
+    },
+    {
+      "id": "midnight",
+      "name": "Midnight",
+      "mode": "dark",
+      "cat": "暗夜金 · 沉稳",
+      "desc": "GitHub Dark 风格，暖金点缀深邃"
+    },
+    {
+      "id": "matrix",
+      "name": "Matrix",
+      "mode": "dark",
+      "cat": "黑客绿 · 极简",
+      "desc": "纯黑底 + 荧光绿，CRT 终端即视感"
+    },
+    {
+      "id": "dracula",
+      "name": "Dracula",
+      "mode": "dark",
+      "cat": "紫粉 · 霓虹绿",
+      "desc": "经典 Dracula 配色，高饱和撞色"
+    },
+    {
+      "id": "ember",
+      "name": "Ember",
+      "mode": "dark",
+      "cat": "炭火橙红",
+      "desc": "炽热火焰色调，温暖而充满力量"
+    },
+    {
+      "id": "synthwave",
+      "name": "Synthwave",
+      "mode": "dark",
+      "cat": "合成波粉紫",
+      "desc": "80 年代复古霓虹，粉紫 + 冰蓝"
+    },
+    {
+      "id": "nord",
+      "name": "Nord",
+      "mode": "dark",
+      "cat": "极地蓝灰",
+      "desc": "北欧极简风，冷静的蓝灰调"
+    },
+    {
+      "id": "tokyo-night",
+      "name": "Tokyo Night",
+      "mode": "dark",
+      "cat": "东京夜蓝粉",
+      "desc": "都市夜空的深邃蓝 + 霓虹粉"
+    },
+    {
+      "id": "catppuccin",
+      "name": "Catppuccin",
+      "mode": "dark",
+      "cat": "暖咖紫 · 细腻",
+      "desc": "温柔的低饱和暖紫，护眼又高级"
+    },
+    {
+      "id": "onedark",
+      "name": "One Dark",
+      "mode": "dark",
+      "cat": "Atom 经典",
+      "desc": "Atom 编辑器经典配色，干净舒适"
+    },
+    {
+      "id": "gruvbox-dark",
+      "name": "Gruvbox Dark",
+      "mode": "dark",
+      "cat": "复古暗黄",
+      "desc": "暖调复古风，橙绿搭配充满怀旧感"
+    },
+    {
+      "id": "monokai",
+      "name": "Monokai",
+      "mode": "dark",
+      "cat": "霓虹高饱和",
+      "desc": "经典 Monokai，鲜艳明亮的高对比度"
+    },
+    {
+      "id": "oceanic",
+      "name": "Oceanic",
+      "mode": "dark",
+      "cat": "深海蓝绿",
+      "desc": "深海色调，蓝绿渐变如海水般沉静"
+    },
+    {
+      "id": "vampire",
+      "name": "Vampire",
+      "mode": "dark",
+      "cat": "暗红 · 哥特",
+      "desc": "暗黑哥特风，深红与黑的神秘气质"
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "mode": "dark",
+      "cat": "赛博黄粉",
+      "desc": "赛博朋克风格，霓虹黄 + 洋红撞色"
+    },
+    {
+      "id": "forest",
+      "name": "Forest",
+      "mode": "dark",
+      "cat": "森林绿",
+      "desc": "幽暗森林色调，墨绿与苔藓的自然感"
+    },
+    {
+      "id": "ink",
+      "name": "Ink",
+      "mode": "dark",
+      "cat": "纯黑 · 极简",
+      "desc": "纯黑白极简主义，摒弃一切色彩干扰"
+    },
+    {
+      "id": "bloodmoon",
+      "name": "Blood Moon",
+      "mode": "dark",
+      "cat": "血红月",
+      "desc": "暗红基调如血月当空，神秘而危险"
+    },
+    {
+      "id": "arctic",
+      "name": "Arctic",
+      "mode": "dark",
+      "cat": "极夜冰蓝",
+      "desc": "极地永夜中的冰蓝色光芒，冷冽通透"
+    },
+    {
+      "id": "royal",
+      "name": "Royal",
+      "mode": "dark",
+      "cat": "帝王紫金",
+      "desc": "紫金配色如帝王华服，尊贵奢华"
+    },
+    {
+      "id": "carbon",
+      "name": "Carbon",
+      "mode": "dark",
+      "cat": "碳灰蓝",
+      "desc": "工业级碳灰，冷静克制不失质感"
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "mode": "dark",
+      "cat": "铁锈橙",
+      "desc": "铁锈般的暖橙色调，粗犷而温暖"
+    },
+    {
+      "id": "retro-amber",
+      "name": "Retro Amber",
+      "mode": "dark",
+      "cat": "琥珀 CRT · 单色",
+      "desc": "模拟老式单色 CRT 终端机，整个界面只有一种琥珀色发光"
+    },
+    {
+      "id": "retro-green",
+      "name": "Retro Green",
+      "mode": "dark",
+      "cat": "绿 CRT · IBM 3270",
+      "desc": "IBM 绿屏终端风格，P1 荧光粉单色显示"
+    },
+    {
+      "id": "tron",
+      "name": "Tron",
+      "mode": "dark",
+      "cat": "创战纪 · 蓝光",
+      "desc": "纯黑背景 + 发光蓝色边框，光栅扫描线质感"
+    },
+    {
+      "id": "hologram",
+      "name": "Hologram",
+      "mode": "dark",
+      "cat": "全息彩虹 · 变色",
+      "desc": "每个界面元素使用不同色调，模拟全息贴纸的彩虹变幻"
+    },
+    {
+      "id": "aurora",
+      "name": "Aurora",
+      "mode": "dark",
+      "cat": "极光 · 绿紫",
+      "desc": "北极光灵感，深空底色中流淌着绿紫色光带"
+    },
+    {
+      "id": "plasma",
+      "name": "Plasma",
+      "mode": "dark",
+      "cat": "等离子 · 电光",
+      "desc": "高能等离子体，紫色电光交织，能量感十足"
+    },
+    {
+      "id": "vaporwave",
+      "name": "Vaporwave",
+      "mode": "dark",
+      "cat": "蒸汽波 · 粉青",
+      "desc": "80s 复古未来美学，粉红 + 青蓝 + 网格落日感"
+    },
+    {
+      "id": "wasteland",
+      "name": "Wasteland",
+      "mode": "dark",
+      "cat": "废土 · 褪色",
+      "desc": "辐射后启示录风格，褪色沙尘色调，粗粝质感"
+    },
+    {
+      "id": "oled",
+      "name": "OLED",
+      "mode": "dark",
+      "cat": "纯黑省电 · 极微光",
+      "desc": "大面积纯黑 #000000，OLED 屏幕真正不发光区域省电，仅必要元素微光"
+    },
+    {
+      "id": "thermal",
+      "name": "Thermal",
+      "mode": "dark",
+      "cat": "热成像 · 蓝焰",
+      "desc": "模拟热成像仪，蓝→紫→红→黄→白渐变，温度越高越亮"
+    },
+    {
+      "id": "starlight",
+      "name": "Starlight",
+      "mode": "dark",
+      "cat": "星光 · 极简微光",
+      "desc": "夜空中的星光点缀，极简的黑白灰，只有星星般微光闪烁"
+    },
+    {
+      "id": "neon-noir",
+      "name": "Neon Noir",
+      "mode": "dark",
+      "cat": "黑色霓虹 · 暗雨",
+      "desc": "黑色电影 + 霓虹灯管光效，雨夜潮湿的街道光线"
+    },
+    {
+      "id": "sakura-night",
+      "name": "Sakura Night",
+      "mode": "dark",
+      "cat": "夜樱 · 粉墨",
+      "desc": "暗夜中的樱花，墨色基底 + 粉红花瓣点缀，和风物哀"
+    },
+    {
+      "id": "matcha",
+      "name": "Matcha",
+      "mode": "dark",
+      "cat": "抹茶 · 和敬",
+      "desc": "日式抹茶色调，深绿基底 + 暖黄点缀，茶道的宁静"
+    },
+    {
+      "id": "rosepine",
+      "name": "Rose Pine",
+      "mode": "dark",
+      "cat": "松玫瑰 · 暖粉",
+      "desc": "柔软的暖粉棕暗色调，像松木与玫瑰的交织"
+    },
+    {
+      "id": "everforest",
+      "name": "Everforest",
+      "mode": "dark",
+      "cat": "常绿森林 · 暖绿",
+      "desc": "常青树林的暖绿色调，自然、柔和、耐看"
+    },
+    {
+      "id": "blueprint",
+      "name": "Blueprint",
+      "mode": "dark",
+      "cat": "蓝图 · 工程图纸",
+      "desc": "CAD 蓝图风格，深蓝底 + 白线和网格，如工程设计图"
+    },
+    {
+      "id": "chalkboard",
+      "name": "Chalkboard",
+      "mode": "dark",
+      "cat": "黑板 · 粉笔字",
+      "desc": "课堂黑板质感，深灰绿底 + 白色粉笔字 + 粉笔灰"
+    },
+    {
+      "id": "steampunk",
+      "name": "Steampunk",
+      "mode": "dark",
+      "cat": "蒸汽朋克 · 黄铜",
+      "desc": "维多利亚工业革命美学，黄铜齿轮 + 铜绿色调"
+    },
+    {
+      "id": "underwater",
+      "name": "Underwater",
+      "mode": "dark",
+      "cat": "深海 · 荧光",
+      "desc": "深海潜水器视角，墨蓝 + 发光荧光生物光点"
+    },
+    {
+      "id": "campfire",
+      "name": "Campfire",
+      "mode": "dark",
+      "cat": "篝火 · 户外",
+      "desc": "夜晚露营篝火，暗红琥珀余烬 + 温暖火焰光"
+    },
+    {
+      "id": "desert-night",
+      "name": "Desert Night",
+      "mode": "dark",
+      "cat": "沙漠之夜 · 星辰",
+      "desc": "撒哈拉深夜，靛蓝天幕 + 金色沙丘 + 璀璨星空"
+    },
+    {
+      "id": "brew",
+      "name": "Brew",
+      "mode": "dark",
+      "cat": "咖啡 · 精酿",
+      "desc": "手冲咖啡色调，深棕 + 奶泡白 + 焦糖金"
+    },
+    {
+      "id": "gemstone",
+      "name": "Gemstone",
+      "mode": "dark",
+      "cat": "宝石 · 璀璨",
+      "desc": "珠宝店展柜，紫水晶 + 翡翠绿 + 蓝宝石交相辉映"
+    },
+    {
+      "id": "coral-reef",
+      "name": "Coral Reef",
+      "mode": "dark",
+      "cat": "珊瑚礁 · 热带",
+      "desc": "热带珊瑚礁主题，粉橙 + 蓝绿 + 明亮艳丽"
+    },
+    {
+      "id": "storm",
+      "name": "Storm",
+      "mode": "dark",
+      "cat": "暴风雨 · 雷鸣",
+      "desc": "暴风雨夜，深灰 + 闪电黄 + 雨幕暗紫"
+    },
+    {
+      "id": "carbon-fiber",
+      "name": "Carbon Fiber",
+      "mode": "dark",
+      "cat": "碳纤维 · 工业",
+      "desc": "碳纤维编织纹理感，哑光黑灰 + 精密工业锋芒"
+    },
+    {
+      "id": "autumn",
+      "name": "Autumn",
+      "mode": "light",
+      "cat": "秋叶 · 金黄",
+      "desc": "深秋落叶色调，枫红 + 金黄 + 枯棕交织"
+    },
+    {
+      "id": "polaroid",
+      "name": "Polaroid",
+      "mode": "light",
+      "cat": "拍立得 · 怀旧",
+      "desc": "拍立得相纸质感，米白边框 + 淡褪色照片"
+    },
+    {
+      "id": "snowfield",
+      "name": "Snowfield",
+      "mode": "light",
+      "cat": "雪原 · 纯白",
+      "desc": "北极雪原的极致白，刺眼白光 + 淡蓝阴影"
+    },
+    {
+      "id": "amber-glass",
+      "name": "Amber Glass",
+      "mode": "light",
+      "cat": "琥珀玻璃 · 通透",
+      "desc": "琥珀色玻璃瓶质感，温暖半透明 + 蜂蜜光泽"
+    },
+    {
+      "id": "frost",
+      "name": "Frost",
+      "mode": "light",
+      "cat": "冰蓝 · 清爽",
+      "desc": "干净利落的冰蓝色调，适合明亮环境"
+    },
+    {
+      "id": "sepia",
+      "name": "Sepia",
+      "mode": "light",
+      "cat": "暖褐 · 复古",
+      "desc": "怀旧棕色调，如旧纸书页般温润"
+    },
+    {
+      "id": "blossom",
+      "name": "Blossom",
+      "mode": "light",
+      "cat": "粉玫 · 优雅",
+      "desc": "柔粉色调宛如春日樱花，优雅温柔"
+    },
+    {
+      "id": "solarized",
+      "name": "Solarized",
+      "mode": "light",
+      "cat": "柔光 · 护眼",
+      "desc": "经典 Solarized 明色调，暖黄底绿蓝搭配"
+    },
+    {
+      "id": "latte",
+      "name": "Latte",
+      "mode": "light",
+      "cat": "暖拿铁 · 猫茶",
+      "desc": "Catppuccin Latte 暖调，像一杯拿铁"
+    },
+    {
+      "id": "gruvbox-light",
+      "name": "Gruvbox Light",
+      "mode": "light",
+      "cat": "复古亮黄",
+      "desc": "Gruvbox 亮色版，温暖怀旧的麦田色"
+    },
+    {
+      "id": "nord-light",
+      "name": "Nord Light",
+      "mode": "light",
+      "cat": "寒霜白",
+      "desc": "Nord 亮色版，清冷通透的霜白色调"
+    },
+    {
+      "id": "vanilla",
+      "name": "Vanilla",
+      "mode": "light",
+      "cat": "香草白 · 极简",
+      "desc": "纯白极简，只保留最基础的视觉层次"
+    },
+    {
+      "id": "lavender",
+      "name": "Lavender",
+      "mode": "light",
+      "cat": "薰衣草紫",
+      "desc": "淡紫色调如薰衣草田，柔和浪漫"
+    },
+    {
+      "id": "mint",
+      "name": "Mint",
+      "mode": "light",
+      "cat": "薄荷绿 · 清凉",
+      "desc": "薄荷般的清爽绿色，清新自然"
+    },
+    {
+      "id": "peachy",
+      "name": "Peachy",
+      "mode": "light",
+      "cat": "蜜桃橙 · 元气",
+      "desc": "蜜桃般温暖的橙粉色，活力满满"
+    },
+    {
+      "id": "sky",
+      "name": "Sky",
+      "mode": "light",
+      "cat": "天空蓝 · 晴朗",
+      "desc": "晴空万里的天蓝色，开阔明快"
+    },
+    {
+      "id": "rosey",
+      "name": "Rosey",
+      "mode": "light",
+      "cat": "玫瑰园 · 馥郁",
+      "desc": "淡红粉玫瑰色，温柔浪漫的庄园气息"
+    },
+    {
+      "id": "bamboo",
+      "name": "Bamboo",
+      "mode": "light",
+      "cat": "竹青 · 禅意",
+      "desc": "竹青色与暖木搭配，东方禅意的宁静"
+    }
+  ]
+}

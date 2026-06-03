@@ -1,0 +1,35 @@
+name: neon-noir
+description: "黑色霓虹 · 暗雨 — 黑色电影 + 霓虹灯管光效，雨夜潮湿的街道光线"
+mode: dark
+colors:
+  banner_border: "#6600aa"
+  banner_title: "#ff2266"
+  banner_accent: "#00ddff"
+  banner_dim: "#1a0a2a"
+  banner_text: "#c0b0c8"
+  ui_accent: "#ff4477"
+  ui_label: "#c0b0c8"
+  ui_ok: "#00ddaa"
+  ui_error: "#ff0044"
+  ui_warn: "#ffaa00"
+  prompt: "#ff3366"
+  input_rule: "#6600aa"
+  response_border: "#440088"
+  status_bar_bg: "#0c0a12"
+  session_label: "#ff4477"
+  session_border: "#440088"
+spinner:
+  waiting_faces:
+    - "(🌧)"
+    - "(💡)"
+    - "(🚬)"
+  thinking_verbs:
+    - "stalking"
+    - "shadowing"
+    - "smoking"
+branding:
+  agent_name: "🌧 Neon Noir"
+  welcome: "雨夜，霓虹，孤独"
+  prompt_symbol: "❯"
+  response_label: "noir"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: blossom
+description: "粉玫 · 优雅 — 柔粉色调宛如春日樱花，优雅温柔"
+mode: light
+colors:
+  banner_border: "#e91e63"
+  banner_title: "#880e4f"
+  banner_accent: "#f06292"
+  banner_dim: "#d7b8cc"
+  banner_text: "#3e2723"
+  ui_accent: "#e91e63"
+  ui_label: "#3e2723"
+  ui_ok: "#2e7d32"
+  ui_error: "#b71c1c"
+  ui_warn: "#e65100"
+  prompt: "#e91e63"
+  input_rule: "#e91e63"
+  response_border: "#e91e63"
+  status_bar_bg: "#f5e0ec"
+  session_label: "#e91e63"
+  session_border: "#e91e63"
+spinner:
+  waiting_faces:
+    - "(🌸)"
+    - "(🌺)"
+    - "(🦋)"
+  thinking_verbs:
+    - "绽放"
+    - "飘落"
+    - "轻舞"
+branding:
+  agent_name: "🌸 Blossom"
+  welcome: "花开时节"
+  prompt_symbol: "🌸"
+  response_label: "Blossom"
+tool_prefix: "┊"

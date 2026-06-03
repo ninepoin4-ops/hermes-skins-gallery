@@ -1,0 +1,35 @@
+name: dracula
+description: "紫粉 · 霓虹绿 — 经典 Dracula 配色，高饱和撞色"
+mode: dark
+colors:
+  banner_border: "#6272a4"
+  banner_title: "#ff79c6"
+  banner_accent: "#50fa7b"
+  banner_dim: "#44475a"
+  banner_text: "#f8f8f2"
+  ui_accent: "#bd93f9"
+  ui_label: "#f8f8f2"
+  ui_ok: "#50fa7b"
+  ui_error: "#ff5555"
+  ui_warn: "#f1fa8c"
+  prompt: "#ff79c6"
+  input_rule: "#6272a4"
+  response_border: "#6272a4"
+  status_bar_bg: "#21222c"
+  session_label: "#bd93f9"
+  session_border: "#6272a4"
+spinner:
+  waiting_faces:
+    - "(🧛)"
+    - "(🦇)"
+    - "(🌙)"
+  thinking_verbs:
+    - "sucking"
+    - "hunting"
+    - "casting"
+branding:
+  agent_name: "🧛 Dracula"
+  welcome: "Welcome to the night"
+  prompt_symbol: "❯"
+  response_label: "dracula"
+tool_prefix: "┊"

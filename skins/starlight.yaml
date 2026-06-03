@@ -1,0 +1,35 @@
+name: starlight
+description: "星光 · 极简微光 — 夜空中的星光点缀，极简的黑白灰，只有星星般微光闪烁"
+mode: dark
+colors:
+  banner_border: "#2a2a4a"
+  banner_title: "#ffffff"
+  banner_accent: "#ddddee"
+  banner_dim: "#16162a"
+  banner_text: "#b0b0cc"
+  ui_accent: "#ccccff"
+  ui_label: "#b0b0cc"
+  ui_ok: "#6688aa"
+  ui_error: "#885566"
+  ui_warn: "#aabb77"
+  prompt: "#ddddee"
+  input_rule: "#2a2a4a"
+  response_border: "#2a2a4a"
+  status_bar_bg: "#0a0a16"
+  session_label: "#ddddee"
+  session_border: "#2a2a4a"
+spinner:
+  waiting_faces:
+    - "(✧)"
+    - "(★)"
+    - "(☆)"
+  thinking_verbs:
+    - "twinkling"
+    - "glimmering"
+    - "constellating"
+branding:
+  agent_name: "✧ Starlight"
+  welcome: "星辰指引方向"
+  prompt_symbol: "✧"
+  response_label: "starlight"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: ink
+description: "纯黑 · 极简 — 纯黑白极简主义，摒弃一切色彩干扰"
+mode: dark
+colors:
+  banner_border: "#333333"
+  banner_title: "#ffffff"
+  banner_accent: "#aaaaaa"
+  banner_dim: "#1a1a1a"
+  banner_text: "#cccccc"
+  ui_accent: "#ffffff"
+  ui_label: "#cccccc"
+  ui_ok: "#88cc88"
+  ui_error: "#cc6666"
+  ui_warn: "#cccc66"
+  prompt: "#ffffff"
+  input_rule: "#333333"
+  response_border: "#333333"
+  status_bar_bg: "#0a0a0a"
+  session_label: "#ffffff"
+  session_border: "#333333"
+spinner:
+  waiting_faces:
+    - "( )"
+    - "( .)"
+    - "(..)"
+  thinking_verbs:
+    - "work"
+    - "think"
+    - "compute"
+branding:
+  agent_name: "■ Ink"
+  welcome: "Less is more"
+  prompt_symbol: "❯"
+  response_label: "ink"
+tool_prefix: "┊"

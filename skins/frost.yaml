@@ -1,0 +1,35 @@
+name: frost
+description: "冰蓝 · 清爽 — 干净利落的冰蓝色调，适合明亮环境"
+mode: light
+colors:
+  banner_border: "#0288d1"
+  banner_title: "#01579b"
+  banner_accent: "#4fc3f7"
+  banner_dim: "#b0bec5"
+  banner_text: "#263238"
+  ui_accent: "#0288d1"
+  ui_label: "#263238"
+  ui_ok: "#2e7d32"
+  ui_error: "#c62828"
+  ui_warn: "#f57f17"
+  prompt: "#0288d1"
+  input_rule: "#0288d1"
+  response_border: "#0288d1"
+  status_bar_bg: "#f0f4f8"
+  session_label: "#0288d1"
+  session_border: "#0288d1"
+spinner:
+  waiting_faces:
+    - "(❄)"
+    - "(⛄)"
+    - "(🌨)"
+  thinking_verbs:
+    - "计算中"
+    - "思考中"
+    - "分析中"
+branding:
+  agent_name: "❄ Frost"
+  welcome: "霜降"
+  prompt_symbol: "❯"
+  response_label: "Frost"
+tool_prefix: "┊"

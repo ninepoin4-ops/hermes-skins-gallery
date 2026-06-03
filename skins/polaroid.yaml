@@ -1,0 +1,35 @@
+name: polaroid
+description: "拍立得 · 怀旧 — 拍立得相纸质感，米白边框 + 淡褪色照片"
+mode: light
+colors:
+  banner_border: "#c8c0b0"
+  banner_title: "#8a6a4a"
+  banner_accent: "#b8987a"
+  banner_dim: "#e0d8cc"
+  banner_text: "#4a3a2a"
+  ui_accent: "#9a7a5a"
+  ui_label: "#4a3a2a"
+  ui_ok: "#6a8a5a"
+  ui_error: "#a05040"
+  ui_warn: "#a08050"
+  prompt: "#8a6a4a"
+  input_rule: "#c8c0b0"
+  response_border: "#c8c0b0"
+  status_bar_bg: "#f4f0e8"
+  session_label: "#8a6a4a"
+  session_border: "#c8c0b0"
+spinner:
+  waiting_faces:
+    - "(📷)"
+    - "(🖼)"
+    - "(📸)"
+  thinking_verbs:
+    - "developing"
+    - "exposing"
+    - "focusing"
+branding:
+  agent_name: "📷 Polaroid"
+  welcome: "咔嚓"
+  prompt_symbol: "❯"
+  response_label: "polaroid"
+tool_prefix: "┊"

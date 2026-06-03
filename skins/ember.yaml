@@ -1,0 +1,35 @@
+name: ember
+description: "炭火橙红 — 炽热火焰色调，温暖而充满力量"
+mode: dark
+colors:
+  banner_border: "#bf360c"
+  banner_title: "#ff6d00"
+  banner_accent: "#ff9100"
+  banner_dim: "#3e1a0a"
+  banner_text: "#e8d5c0"
+  ui_accent: "#ff6d00"
+  ui_label: "#e8d5c0"
+  ui_ok: "#69f0ae"
+  ui_error: "#d50000"
+  ui_warn: "#ffab00"
+  prompt: "#ff9100"
+  input_rule: "#bf360c"
+  response_border: "#bf360c"
+  status_bar_bg: "#24120a"
+  session_label: "#ff6d00"
+  session_border: "#bf360c"
+spinner:
+  waiting_faces:
+    - "(🔥)"
+    - "(🔥🔥)"
+    - "(🔥🔥🔥)"
+  thinking_verbs:
+    - "燃烧"
+    - "炙烤"
+    - "锻造"
+branding:
+  agent_name: "🔥 Ember"
+  welcome: "烈焰燃起"
+  prompt_symbol: "❯"
+  response_label: "Ember"
+tool_prefix: "┊"

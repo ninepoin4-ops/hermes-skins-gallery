@@ -1,0 +1,35 @@
+name: blueprint
+description: "蓝图 · 工程图纸 — CAD 蓝图风格，深蓝底 + 白线和网格，如工程设计图"
+mode: dark
+colors:
+  banner_border: "#1a4a8a"
+  banner_title: "#4da6ff"
+  banner_accent: "#80ccff"
+  banner_dim: "#0d2040"
+  banner_text: "#a0c8e8"
+  ui_accent: "#5bb8ff"
+  ui_label: "#a0c8e8"
+  ui_ok: "#66eebb"
+  ui_error: "#ff5566"
+  ui_warn: "#ffbb44"
+  prompt: "#80ccff"
+  input_rule: "#1a4a8a"
+  response_border: "#1a4a8a"
+  status_bar_bg: "#081220"
+  session_label: "#5bb8ff"
+  session_border: "#1a4a8a"
+spinner:
+  waiting_faces:
+    - "(📐)"
+    - "(📏)"
+    - "(✏)"
+  thinking_verbs:
+    - "drafting"
+    - "dimensioning"
+    - "projecting"
+branding:
+  agent_name: "📐 Blueprint"
+  welcome: "图纸已展开"
+  prompt_symbol: "▸"
+  response_label: "blueprint"
+tool_prefix: "┊"

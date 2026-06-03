@@ -1,0 +1,35 @@
+name: oled
+description: "纯黑省电 · 极微光 — 大面积纯黑 #000000，OLED 屏幕真正不发光区域省电，仅必要元素微光"
+mode: dark
+colors:
+  banner_border: "#222222"
+  banner_title: "#eeeeee"
+  banner_accent: "#888888"
+  banner_dim: "#111111"
+  banner_text: "#aaaaaa"
+  ui_accent: "#cccccc"
+  ui_label: "#aaaaaa"
+  ui_ok: "#446644"
+  ui_error: "#664444"
+  ui_warn: "#666644"
+  prompt: "#cccccc"
+  input_rule: "#222222"
+  response_border: "#222222"
+  status_bar_bg: "#050505"
+  session_label: "#cccccc"
+  session_border: "#222222"
+spinner:
+  waiting_faces:
+    - "(·)"
+    - "(:)"
+    - "(∴)"
+  thinking_verbs:
+    - "waiting"
+    - "idling"
+    - "saving"
+branding:
+  agent_name: "○ OLED"
+  welcome: "Power saving mode"
+  prompt_symbol: "·"
+  response_label: "oled"
+tool_prefix: "┊"

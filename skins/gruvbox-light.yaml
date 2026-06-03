@@ -1,0 +1,35 @@
+name: gruvbox-light
+description: "复古亮黄 — Gruvbox 亮色版，温暖怀旧的麦田色"
+mode: light
+colors:
+  banner_border: "#bdae93"
+  banner_title: "#b57614"
+  banner_accent: "#427b58"
+  banner_dim: "#d5c4a1"
+  banner_text: "#3c3836"
+  ui_accent: "#8f3f71"
+  ui_label: "#3c3836"
+  ui_ok: "#79740e"
+  ui_error: "#9d0006"
+  ui_warn: "#b57614"
+  prompt: "#b57614"
+  input_rule: "#bdae93"
+  response_border: "#bdae93"
+  status_bar_bg: "#f3e9c5"
+  session_label: "#b57614"
+  session_border: "#bdae93"
+spinner:
+  waiting_faces:
+    - "(🌾)"
+    - "(🎵)"
+    - "(☀)"
+  thinking_verbs:
+    - "chilling"
+    - "vibing"
+    - "strumming"
+branding:
+  agent_name: "🌾 Gruvbox Light"
+  welcome: "Golden hour"
+  prompt_symbol: "❯"
+  response_label: "gruvlight"
+tool_prefix: "┊"

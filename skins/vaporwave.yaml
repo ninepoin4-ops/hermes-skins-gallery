@@ -1,0 +1,35 @@
+name: vaporwave
+description: "蒸汽波 · 粉青 — 80s 复古未来美学，粉红 + 青蓝 + 网格落日感"
+mode: dark
+colors:
+  banner_border: "#ff00aa"
+  banner_title: "#ff6ec7"
+  banner_accent: "#00d4ff"
+  banner_dim: "#3a1a4e"
+  banner_text: "#e0b0ff"
+  ui_accent: "#ff6eb4"
+  ui_label: "#e0b0ff"
+  ui_ok: "#00ffbf"
+  ui_error: "#ff0044"
+  ui_warn: "#ffcc00"
+  prompt: "#00d4ff"
+  input_rule: "#ff00aa"
+  response_border: "#d400aa"
+  status_bar_bg: "#1f0d35"
+  session_label: "#ff7ac8"
+  session_border: "#d400aa"
+spinner:
+  waiting_faces:
+    - "(🌴)"
+    - "(🌅)"
+    - "(🎧)"
+  thinking_verbs:
+    - "vibing"
+    - "sampling"
+    - "rewinding"
+branding:
+  agent_name: "🌴 Vaporwave"
+  welcome: "A E S T H E T I C"
+  prompt_symbol: "▶"
+  response_label: "vapor"
+tool_prefix: "┊"

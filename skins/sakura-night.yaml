@@ -1,0 +1,35 @@
+name: sakura-night
+description: "夜樱 · 粉墨 — 暗夜中的樱花，墨色基底 + 粉红花瓣点缀，和风物哀"
+mode: dark
+colors:
+  banner_border: "#4a1a2a"
+  banner_title: "#ff8da1"
+  banner_accent: "#ffb7c5"
+  banner_dim: "#2a1220"
+  banner_text: "#c8b0b8"
+  ui_accent: "#ff7090"
+  ui_label: "#c8b0b8"
+  ui_ok: "#88aa77"
+  ui_error: "#cc3355"
+  ui_warn: "#ddbb66"
+  prompt: "#ffb7c5"
+  input_rule: "#4a1a2a"
+  response_border: "#5a2030"
+  status_bar_bg: "#0e080c"
+  session_label: "#ff8da1"
+  session_border: "#5a2030"
+spinner:
+  waiting_faces:
+    - "(🌸)"
+    - "(🌙)"
+    - "(🦋)"
+  thinking_verbs:
+    - "飘落"
+    - "散华"
+    - "咏叹"
+branding:
+  agent_name: "🌸 Sakura Night"
+  welcome: "夜桜見物"
+  prompt_symbol: "❀"
+  response_label: "sakura"
+tool_prefix: "┊"

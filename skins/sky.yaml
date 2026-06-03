@@ -1,0 +1,35 @@
+name: sky
+description: "天空蓝 · 晴朗 — 晴空万里的天蓝色，开阔明快"
+mode: light
+colors:
+  banner_border: "#90caf9"
+  banner_title: "#0d47a1"
+  banner_accent: "#42a5f5"
+  banner_dim: "#bbdefb"
+  banner_text: "#1a2a3a"
+  ui_accent: "#1565c0"
+  ui_label: "#1a2a3a"
+  ui_ok: "#2e7d32"
+  ui_error: "#c62828"
+  ui_warn: "#e65100"
+  prompt: "#0d47a1"
+  input_rule: "#90caf9"
+  response_border: "#90caf9"
+  status_bar_bg: "#e3f0fa"
+  session_label: "#0d47a1"
+  session_border: "#90caf9"
+spinner:
+  waiting_faces:
+    - "(☀)"
+    - "(⛅)"
+    - "(🌈)"
+  thinking_verbs:
+    - "shining"
+    - "floating"
+    - "soaring"
+branding:
+  agent_name: "☀ Sky"
+  welcome: "Clear skies ahead"
+  prompt_symbol: "❯"
+  response_label: "sky"
+tool_prefix: "┊"

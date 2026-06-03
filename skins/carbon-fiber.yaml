@@ -1,0 +1,35 @@
+name: carbon-fiber
+description: "碳纤维 · 工业 — 碳纤维编织纹理感，哑光黑灰 + 精密工业锋芒"
+mode: dark
+colors:
+  banner_border: "#2a2e36"
+  banner_title: "#d0d4dd"
+  banner_accent: "#7a8298"
+  banner_dim: "#1a1c22"
+  banner_text: "#a0a4b0"
+  ui_accent: "#c0c4cc"
+  ui_label: "#a0a4b0"
+  ui_ok: "#6a8a6a"
+  ui_error: "#8a4a4a"
+  ui_warn: "#8a8a4a"
+  prompt: "#d0d4dd"
+  input_rule: "#2a2e36"
+  response_border: "#2a2e36"
+  status_bar_bg: "#0a0a0e"
+  session_label: "#d0d4dd"
+  session_border: "#2a2e36"
+spinner:
+  waiting_faces:
+    - "(◈)"
+    - "(◇)"
+    - "(◆)"
+  thinking_verbs:
+    - "weaving"
+    - "laminating"
+    - "curing"
+branding:
+  agent_name: "◈ Carbon Fiber"
+  welcome: "Toray T1100 编织完成"
+  prompt_symbol: "❯"
+  response_label: "carbonf"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: storm
+description: "暴风雨 · 雷鸣 — 暴风雨夜，深灰 + 闪电黄 + 雨幕暗紫"
+mode: dark
+colors:
+  banner_border: "#2a2a4a"
+  banner_title: "#ddeeff"
+  banner_accent: "#ffdd00"
+  banner_dim: "#1a1a28"
+  banner_text: "#b0b0c0"
+  ui_accent: "#bbccff"
+  ui_label: "#b0b0c0"
+  ui_ok: "#88aa88"
+  ui_error: "#dd3333"
+  ui_warn: "#ffdd00"
+  prompt: "#ddeeff"
+  input_rule: "#2a2a4a"
+  response_border: "#3a3a6a"
+  status_bar_bg: "#08080e"
+  session_label: "#ddeeff"
+  session_border: "#3a3a6a"
+spinner:
+  waiting_faces:
+    - "(🌩)"
+    - "(⚡)"
+    - "(🌧)"
+  thinking_verbs:
+    - "thundering"
+    - "lightning"
+    - "pouring"
+branding:
+  agent_name: "🌩 Storm"
+  welcome: "暴风雨中"
+  prompt_symbol: "⚡"
+  response_label: "storm"
+tool_prefix: "┊"

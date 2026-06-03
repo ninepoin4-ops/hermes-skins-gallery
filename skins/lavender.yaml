@@ -1,0 +1,35 @@
+name: lavender
+description: "薰衣草紫 — 淡紫色调如薰衣草田，柔和浪漫"
+mode: light
+colors:
+  banner_border: "#ce93d8"
+  banner_title: "#7b1fa2"
+  banner_accent: "#ba68c8"
+  banner_dim: "#e1c8e8"
+  banner_text: "#3a2a40"
+  ui_accent: "#7b1fa2"
+  ui_label: "#3a2a40"
+  ui_ok: "#43a047"
+  ui_error: "#c62828"
+  ui_warn: "#e65100"
+  prompt: "#7b1fa2"
+  input_rule: "#ce93d8"
+  response_border: "#ce93d8"
+  status_bar_bg: "#f0e4f4"
+  session_label: "#7b1fa2"
+  session_border: "#ce93d8"
+spinner:
+  waiting_faces:
+    - "(💜)"
+    - "(🪻)"
+    - "(🌸)"
+  thinking_verbs:
+    - "blooming"
+    - "fragrancing"
+    - "gentling"
+branding:
+  agent_name: "💜 Lavender"
+  welcome: "花田漫步"
+  prompt_symbol: "❯"
+  response_label: "lavender"
+tool_prefix: "┊"

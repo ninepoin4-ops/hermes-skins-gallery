@@ -1,0 +1,35 @@
+name: rosepine
+description: "松玫瑰 · 暖粉 — 柔软的暖粉棕暗色调，像松木与玫瑰的交织"
+mode: dark
+colors:
+  banner_border: "#524f67"
+  banner_title: "#ebbcba"
+  banner_accent: "#c4a7e7"
+  banner_dim: "#2a2838"
+  banner_text: "#e0def4"
+  ui_accent: "#ebbcba"
+  ui_label: "#e0def4"
+  ui_ok: "#9ccfd8"
+  ui_error: "#eb6f92"
+  ui_warn: "#f6c177"
+  prompt: "#ebbcba"
+  input_rule: "#524f67"
+  response_border: "#524f67"
+  status_bar_bg: "#13111d"
+  session_label: "#ebbcba"
+  session_border: "#524f67"
+spinner:
+  waiting_faces:
+    - "(🌹)"
+    - "(🌲)"
+    - "(🌙)"
+  thinking_verbs:
+    - "blooming"
+    - "pining"
+    - "dreaming"
+branding:
+  agent_name: "🌹 Rose Pine"
+  welcome: "Soft whispers"
+  prompt_symbol: "❯"
+  response_label: "rosepine"
+tool_prefix: "┊"

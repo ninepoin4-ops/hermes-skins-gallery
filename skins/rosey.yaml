@@ -1,0 +1,35 @@
+name: rosey
+description: "玫瑰园 · 馥郁 — 淡红粉玫瑰色，温柔浪漫的庄园气息"
+mode: light
+colors:
+  banner_border: "#ef9a9a"
+  banner_title: "#c62828"
+  banner_accent: "#e57373"
+  banner_dim: "#e8c0c0"
+  banner_text: "#3a2020"
+  ui_accent: "#d32f2f"
+  ui_label: "#3a2020"
+  ui_ok: "#388e3c"
+  ui_error: "#b71c1c"
+  ui_warn: "#e65100"
+  prompt: "#c62828"
+  input_rule: "#ef9a9a"
+  response_border: "#ef9a9a"
+  status_bar_bg: "#f8e4e4"
+  session_label: "#c62828"
+  session_border: "#ef9a9a"
+spinner:
+  waiting_faces:
+    - "(🌹)"
+    - "(🌷)"
+    - "(🌺)"
+  thinking_verbs:
+    - "blooming"
+    - "fragrant"
+    - "petalling"
+branding:
+  agent_name: "🌹 Rosey"
+  welcome: "玫瑰庄园"
+  prompt_symbol: "❯"
+  response_label: "rosey"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: peachy
+description: "蜜桃橙 · 元气 — 蜜桃般温暖的橙粉色，活力满满"
+mode: light
+colors:
+  banner_border: "#ffab91"
+  banner_title: "#e65100"
+  banner_accent: "#ff8a65"
+  banner_dim: "#f0d0c0"
+  banner_text: "#3a2a1a"
+  ui_accent: "#ff6d00"
+  ui_label: "#3a2a1a"
+  ui_ok: "#43a047"
+  ui_error: "#c62828"
+  ui_warn: "#f57f17"
+  prompt: "#e65100"
+  input_rule: "#ffab91"
+  response_border: "#ffab91"
+  status_bar_bg: "#f8e8e0"
+  session_label: "#e65100"
+  session_border: "#ffab91"
+spinner:
+  waiting_faces:
+    - "(🍑)"
+    - "(🍊)"
+    - "(☀)"
+  thinking_verbs:
+    - "juicing"
+    - "sweetening"
+    - "glowing"
+branding:
+  agent_name: "🍑 Peachy"
+  welcome: "Sweet day~"
+  prompt_symbol: "❯"
+  response_label: "peachy"
+tool_prefix: "┊"

@@ -1,0 +1,35 @@
+name: coral-reef
+description: "珊瑚礁 · 热带 — 热带珊瑚礁主题，粉橙 + 蓝绿 + 明亮艳丽"
+mode: dark
+colors:
+  banner_border: "#0066aa"
+  banner_title: "#ff6699"
+  banner_accent: "#00ddcc"
+  banner_dim: "#0a1a3a"
+  banner_text: "#c8d8e0"
+  ui_accent: "#ff5588"
+  ui_label: "#c8d8e0"
+  ui_ok: "#44dd88"
+  ui_error: "#ff3355"
+  ui_warn: "#ffcc44"
+  prompt: "#ff6699"
+  input_rule: "#0066aa"
+  response_border: "#0066aa"
+  status_bar_bg: "#08101a"
+  session_label: "#ff5588"
+  session_border: "#0066aa"
+spinner:
+  waiting_faces:
+    - "(🐠)"
+    - "(🐡)"
+    - "(🪸)"
+  thinking_verbs:
+    - "swimming"
+    - "diving"
+    - "blooming"
+branding:
+  agent_name: "🐠 Coral Reef"
+  welcome: "珊瑚花园"
+  prompt_symbol: "❯"
+  response_label: "coral"
+tool_prefix: "┊"

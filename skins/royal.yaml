@@ -1,0 +1,35 @@
+name: royal
+description: "帝王紫金 — 紫金配色如帝王华服，尊贵奢华"
+mode: dark
+colors:
+  banner_border: "#4a1a6b"
+  banner_title: "#ce93d8"
+  banner_accent: "#ffd700"
+  banner_dim: "#2a1040"
+  banner_text: "#d0c0e0"
+  ui_accent: "#ce93d8"
+  ui_label: "#d0c0e0"
+  ui_ok: "#81c784"
+  ui_error: "#ef5350"
+  ui_warn: "#ffd54f"
+  prompt: "#ffd700"
+  input_rule: "#4a1a6b"
+  response_border: "#4a1a6b"
+  status_bar_bg: "#180c22"
+  session_label: "#ce93d8"
+  session_border: "#4a1a6b"
+spinner:
+  waiting_faces:
+    - "(👑)"
+    - "(💎)"
+    - "(⚜)"
+  thinking_verbs:
+    - "敕令"
+    - "诏书"
+    - "裁决"
+branding:
+  agent_name: "👑 Royal"
+  welcome: "王权永固"
+  prompt_symbol: "❯"
+  response_label: "royal"
+tool_prefix: "┊"

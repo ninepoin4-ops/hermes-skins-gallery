@@ -1,0 +1,35 @@
+name: tron
+description: "创战纪 · 蓝光 — 纯黑背景 + 发光蓝色边框，光栅扫描线质感"
+mode: dark
+colors:
+  banner_border: "#0066ff"
+  banner_title: "#00ccff"
+  banner_accent: "#3399ff"
+  banner_dim: "#001a33"
+  banner_text: "#00ccff"
+  ui_accent: "#00ddff"
+  ui_label: "#00ccff"
+  ui_ok: "#00ff88"
+  ui_error: "#ff0055"
+  ui_warn: "#ffaa00"
+  prompt: "#00eeff"
+  input_rule: "#0066ff"
+  response_border: "#0066ff"
+  status_bar_bg: "#000810"
+  session_label: "#00ccff"
+  session_border: "#0066ff"
+spinner:
+  waiting_faces:
+    - "(◉)"
+    - "(◎)"
+    - "(○)"
+  thinking_verbs:
+    - "initializing lightcycle"
+    - "digitizing"
+    - "gridlinking"
+branding:
+  agent_name: "◉ Tron"
+  welcome: "进入网格"
+  prompt_symbol: "⤷"
+  response_label: "tron"
+tool_prefix: "┊"

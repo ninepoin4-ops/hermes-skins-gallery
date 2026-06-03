@@ -1,0 +1,35 @@
+name: vampire
+description: "暗红 · 哥特 — 暗黑哥特风，深红与黑的神秘气质"
+mode: dark
+colors:
+  banner_border: "#5c1010"
+  banner_title: "#e53935"
+  banner_accent: "#ff6f60"
+  banner_dim: "#2a0a0a"
+  banner_text: "#d4b0b0"
+  ui_accent: "#e53935"
+  ui_label: "#d4b0b0"
+  ui_ok: "#66bb6a"
+  ui_error: "#b71c1c"
+  ui_warn: "#ffab00"
+  prompt: "#e53935"
+  input_rule: "#5c1010"
+  response_border: "#5c1010"
+  status_bar_bg: "#140808"
+  session_label: "#e53935"
+  session_border: "#5c1010"
+spinner:
+  waiting_faces:
+    - "(🦇)"
+    - "(🧛)"
+    - "(🌕)"
+  thinking_verbs:
+    - "hunting"
+    - "stalking"
+    - "feasting"
+branding:
+  agent_name: "🧛 Vampire"
+  welcome: "长夜永驻"
+  prompt_symbol: "❯"
+  response_label: "vampire"
+tool_prefix: "┊"
