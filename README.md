@@ -1,6 +1,6 @@
 # 🎨 Hermes Skin Gallery
 
-> <img width="800"  alt="90388c472f2444d78696eac9721ca097" src="https://github.com/user-attachments/assets/f191249a-b503-47cd-a5b3-6deaefccccb1" />
+> <img width="620"  alt="90388c472f2444d78696eac9721ca097" src="https://github.com/user-attachments/assets/f191249a-b503-47cd-a5b3-6deaefccccb1" />
 
 
 >
@@ -20,7 +20,7 @@
 - 🎨 **实时配色对比** — 看到 prompt、边框、状态栏、响应区域的实际颜色
 - 📋 **一键复制** — 点击任意皮肤的「复制 YAML 配置」按钮，粘贴即用
 - 🔍 **筛选** — 支持全部 / 深色 / 浅色三种视图
-<img width="761" height="860" alt="局部截取_20260603_100836" src="https://github.com/user-attachments/assets/3c9087c3-df18-44f6-81a2-486fd770f915" />
+<img height="800" alt="局部截取_20260603_100836" src="https://github.com/user-attachments/assets/3c9087c3-df18-44f6-81a2-486fd770f915" />
 
 
 Open [www.hermes-skins.top](https://www.hermes-skins.top) in your browser to browse all 67 skins in a live preview:
