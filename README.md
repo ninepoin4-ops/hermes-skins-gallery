@@ -19,6 +19,7 @@
 - 🎨 **实时配色对比** — 看到 prompt、边框、状态栏、响应区域的实际颜色
 - 📋 **一键复制** — 点击任意皮肤的「复制 YAML 配置」按钮，粘贴即用
 - 🔍 **筛选** — 支持全部 / 深色 / 浅色三种视图
+<img width="761" height="860" alt="局部截取_20260603_100836" src="https://github.com/user-attachments/assets/3c9087c3-df18-44f6-81a2-486fd770f915" />
 
 
 Open [preview/index.html](./preview/index.html) in your browser to browse all 67 skins in a live preview:
