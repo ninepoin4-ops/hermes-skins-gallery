@@ -1,6 +1,6 @@
 # 🎨 Hermes Skin Gallery
 
-> **中 / EN**
+> 
 >
 > 67 套精心设计的终端皮肤，为 [Hermes Agent](https://github.com/NousResearch/hermes-agent) 而生。
 >
@@ -13,14 +13,14 @@
 
 ## 🖼 预览 / Preview
 
-**中文**
+
 在浏览器中打开 [preview/index.html](./preview/index.html) 即可看到所有 67 套皮肤的完整预览页面：
 - 🎯 **真实终端模拟** — 每张卡片都是完整渲染的 Hermes CLI 界面
 - 🎨 **实时配色对比** — 看到 prompt、边框、状态栏、响应区域的实际颜色
 - 📋 **一键复制** — 点击任意皮肤的「复制 YAML 配置」按钮，粘贴即用
 - 🔍 **筛选** — 支持全部 / 深色 / 浅色三种视图
 
-**English**
+
 Open [preview/index.html](./preview/index.html) in your browser to browse all 67 skins in a live preview:
 - 🎯 **Real terminal mockups** — every card renders a complete Hermes CLI screen
 - 🎨 **See the actual colors** — prompt, borders, status bar, response area
