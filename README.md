@@ -13,7 +13,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 ## 🖼 预览 / Preview
 
-在浏览器中打开 [www.hermes-skins.top](https://www.hermes-skins.top) 即可看到所有 67 套皮肤的完整预览页面：
+访问 [www.hermes-skins.top](https://www.hermes-skins.top) 即可看到所有 67 套皮肤的完整预览页面：
 - 🎯 **真实终端模拟** — 每张卡片都是完整渲染的 Hermes CLI 界面
 - 🎨 **实时配色对比** — 看到 prompt、边框、状态栏、响应区域的实际颜色
 - 📋 **一键复制** — 点击任意皮肤的「复制 YAML 配置」按钮，粘贴即用
